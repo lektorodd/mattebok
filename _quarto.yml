@@ -1,0 +1,37 @@
+project:
+  type: book
+
+from: markdown+emoji
+
+book:
+  title: "Programmering og matematikk"
+  author: "Torodd F. Ottestad"
+  sidebar:
+    logo: img/programmer.png
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/
+        text: GitHub
+        aria-label: GitHub
+      - icon: person-circle
+        href: https://lektorodd.github.io/about.html
+        text: Om meg
+        aria-label: Om meg 
+  
+  chapters:
+    - index.qmd
+    - part: sannsyn1.qmd
+      chapters: 
+        - sannsyn-terningar.ipynb
+    - summary.qmd
+
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Programmering og matematikk",
+    "section": "",
+    "text": "Om boka\nDenne boka inneheld ulike måtar ein kan nytta programmering på i matematikk (programfag på vgs).\nEg nyttar Python som programmeringsspråk gjennom heile boka 🐍.\n\n\n\n\n\n\nOBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med ujamne mellomrom.\n\n\nFor dei spesielt interesserte er boka laga med Quarto. For å lære meir om Quarto-bøker kan ein kikka her.\n\nLogo: Programmer icons created by juicy_fish - Flaticon"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "sannsyn1.html",
+    "href": "sannsyn1.html",
+    "title": "Sannsyn og simulering S1/S2",
+    "section": "",
+    "text": "I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python.\n…"
+  },
+  {
+    "objectID": "sannsyn-terningar.html",
+    "href": "sannsyn-terningar.html",
+    "title": "1  Terningar",
+    "section": "",
+    "text": "Ein fin stad å starta med simulering er med terningar 🎲 Her er sannsynet uniformt (det er like sannsynleg å få 2 som 5), og dei ulike utfalla er heiltal.\nDet første som må gjerast er å gjera i stand “trekkaren” vår. Eg bruker her ein tilfeldighetsgenerator frå NumPy (dokumentasjon her).\n\nimport numpy as np\nrng = np.random.default_rng()\n\nNår me no har klargjort generatoren kan me bruka den innebygde integers-funksjonen for å trilla ein terning.\n\nterning = rng.integers(1, 7)\nprint(terning)\n\n6\n\n\n\n\n\n\n\n\nMerk\n\n\n\nHer er verdien terning eit tal større eller lik 1 og mindre enn 7. Sidan det er heiltal me trekk er dermed \\[\\text{terning} \\in \\{1, 2, 3, 4, 5, 6\\}\\]\n\n\nFor å trilla fleire terningar kan me anten bruka løkker:\n\nfor i in range(10):\n    print(rng.integers(1, 7))\n\n3\n4\n1\n6\n5\n2\n1\n5\n1\n5\n\n\neller så kan me legga inn eit argument size i integers. Då blir output ein array (ein form for liste) med size terningar:\n\nterningar = rng.integers(1, 7, size=10)\nprint(terningar)\n\n[2 3 4 6 1 1 1 1 6 6]\n\n\nNo har me det me treng for å kunna simulera eit stokastisk forsøk og estimera sannsyn ut frå simuleringa. Til dømes kan me prøva å finna ut av kor sannunleg det er å trilla 5 eller 6 på ein terning:\n\nN = 1000000 # tal simuleringar\n\nterningar = rng.integers(1, 7, size=N)\n\ngunstige = sum(terningar >= 5)\n\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet for 5 eller 6 er {sannsyn:.4f}\")\n\nSannsynet for 5 eller 6 er 0.3336\n\n\n\n\n\n\n\n\nForklaring: gunstige = sum(terningar >= 5)\n\n\n\n\n\nFor å forstå denne ser me på eit døme:\n\narray = np.array([1, 2, 3, 4, 5, 6])\n\nstørre_enn_3 = array > 3\n\nprint(array)\nprint(større_enn_3)\nprint(sum(større_enn_3))\n\n[1 2 3 4 5 6]\n[False False False  True  True  True]\n3\n\n\nAltså gjer me om verdiar til True eller False. Python reknar True som 1 og False som 0. Når me då summerer alle elementa i array får me antall True i arrayen."
+  },
+  {
+    "objectID": "sannsyn-terningar.html#ein-terning",
+    "href": "sannsyn-terningar.html#ein-terning",
+    "title": "1  Terningar og intro til simulering",
+    "section": "1.1 Ein terning 🎲",
+    "text": "1.1 Ein terning 🎲\n\nterning = rng.integers(1, 7)\nprint(terning)\n\n6\n\n\n\n\n\n\n\n\nMerk\n\n\n\nHer er verdien terning eit tal større eller lik 1 og mindre enn 7. Sidan det er heiltal me trekk er dermed \\[\\text{terning} \\in \\{1, 2, 3, 4, 5, 6\\}\\]\n\n\nFor å trilla fleire terningar kan me anten bruka løkker:\n\nfor i in range(10):\n    print(rng.integers(1, 7))\n\n3\n4\n1\n6\n5\n2\n1\n5\n1\n5\n\n\neller så kan me legga inn eit argument size i integers. Då blir output ein array (ein form for liste) med size terningar:\n\nterningar = rng.integers(1, 7, size=10)\nprint(terningar)\n\n[2 3 4 6 1 1 1 1 6 6]\n\n\nNo har me det me treng for å kunna simulera eit stokastisk forsøk og estimera sannsyn ut frå simuleringa. Til dømes kan me prøva å finna ut av kor sannunleg det er å trilla 5 eller 6 på ein terning:\n\nN = 1000000 # tal simuleringar\n\nterningar = rng.integers(1, 7, size=N)\n\ngunstige = sum(terningar >= 5)\n\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet for 5 eller 6 er {sannsyn:.4f}\")\n\nSannsynet for 5 eller 6 er 0.3336\n\n\n\n\n\n\n\n\nForklaring: gunstige = sum(terningar >= 5)\n\n\n\n\n\nFor å forstå denne ser me på eit døme:\n\narray = np.array([1, 2, 3, 4, 5, 6])\n\nstørre_enn_3 = array > 3\n\nprint(array)\nprint(større_enn_3)\nprint(sum(større_enn_3))\n\n[1 2 3 4 5 6]\n[False False False  True  True  True]\n3\n\n\nAltså gjer me om verdiar til True eller False. Python reknar True som 1 og False som 0. Når me då summerer alle elementa i array får me antall True i arrayen."
+  },
+  {
+    "objectID": "sannsyn-terningar.html#fleire-terningar",
+    "href": "sannsyn-terningar.html#fleire-terningar",
+    "title": "1  Terningar og intro til simulering",
+    "section": "1.2 Fleire terningar 🎲 🎲",
+    "text": "1.2 Fleire terningar 🎲 🎲\nSpørsmål som “Kva er sannsynet for at produktet av to terningar er 8 eller mindre” er fint å finna svar på ved hjelp av simulering:\n\nN = 1000000\n\nterning1 = rng.integers(1, 7, size=N)\nterning2 = rng.integers(1, 7, size=N)\n\nprodukt = terning1 * terning2\ngunstige = sum(produkt <= 8)\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet er {sannsyn:.4f}\")\n\nSannsynet er 0.4452\n\n\n\n\n\n\n\n\nForklaring: produkt = terning1 * terning2\n\n\n\n\n\nKodelikna finn produktet av element på samme plass i dei to arrayane. Sjekk dømet:\n\na = np.array([1, 2, 3, 4, 5])\nb = np.array([6, 7, 8, 9, 10])\n\nc = a * b\n\nprint(c)\n\n[ 6 14 24 36 50]\n\n\n\\(1\\cdot 6 = 6\\) og \\(2\\cdot 7 = 14\\)…"
+  },
+  {
+    "objectID": "sannsyn-terningar.html#nøyaktighet",
+    "href": "sannsyn-terningar.html#nøyaktighet",
+    "title": "1  Terningar og intro til simulering",
+    "section": "1.3 Nøyaktighet 🎯",
+    "text": "1.3 Nøyaktighet 🎯\nSjekkar kva som skjer når me triller fleire og fleire terningar (eller ein terning fleire gongar). For å visa samanhengen plottar me resultatet. I dømet ser me på sannsynet for å trilla 4 på ein terning.\n\nimport matplotlib.pyplot as plt\n\n# antall kast\nN = 10000000\n\n# triller terningar\nterningar = rng.integers(1, 7, size=N)\n\n# finn den kumulative summen av terningar som er lik 4\nkumulativ_sum = np.cumsum(terningar == 4)\n\n# lager \"x-akse\" frå 1 til N\nx = np.arange(1, N + 1)\n\n# finn relativ frekvens\nrel_frekvens = kumulativ_sum / x\n\nplt.figure(figsize=(10, 5))                      # lagar ein figur med 10x5 mål\nplt.hlines(1/6, 0, N, color=\"red\")               # teiknar ein linje med farge \"red\" for den teoretiske verdien\nplt.plot(x, rel_frekvens)                        # plottar x-akse og y-akse    \nplt.xscale(\"log\")                                # logaritmisk x-akse\nplt.xlabel(\"Antall kast \\n merk: log. skala\")    # namn på x-aksen\nplt.ylabel(\"Relativ frekvens\")                   # namn på y-aksen\nplt.title(\"Relativ frekvens for terningar\")      # tittel på figur\nplt.show()\n\n\n\n\nHer ser me at di fleire kast me gjennomfører, di nærare kjem den relative frekvensen den teoretiske verdien for å trilla ein firar på vanleg terning.\n\\[ P(\\text{firar}) = \\frac{1}{6} \\approx 0.167 \\]"
+  }
+]

@@ -1,0 +1,18 @@
+# Om boka {.unnumbered}
+
+Denne boka inneheld ulike måtar ein kan nytta programmering på i matematikk (programfag på vgs). 
+
+Eg nyttar Python som programmeringsspråk gjennom heile boka :snake:.
+
+:::{.callout-warning}
+# OBS :construction: :construction: :construction: 
+
+Boka er under utvikling og vert oppdatert med ujamne mellomrom.
+:::
+
+For dei spesielt interesserte er boka laga med Quarto. 
+For å lære meir om Quarto-bøker kan ein kikka [her](https://quarto.org/docs/books).
+
+---
+
+Logo: Programmer icons created by juicy_fish - Flaticon
