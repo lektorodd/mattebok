@@ -1,0 +1,27 @@
+# Tips til programmeringa
+
+Det er mange måtar ein kan skrive og kompilere Pythonkode på. Beste tips for programmering i matematikk er å bruka [Jupyter-notatbøker](https://docs.jupyter.org/en/latest/#what-is-a-notebook). Dette er filer (`.ipynb`) der ein kan kombinera små snuttar med Pythonkode og tekst (i `markdown`-format). DEnne boka er stort sett basert på jupyter-filer. [Dette](https://github.com/lektorodd/mattebok/blob/main/sannsyn-terningar.ipynb) er eit døme på korleis ei slik fil ser ut. 
+
+## Jupyter lab
+
+Eit godt verktøy for å laga, endra og køyra jupyterfiler er Jupyter Lab. Dette programmet kan installerast på mange måtar. Mitt tips er å installera det gjennom *Miniconda*.
+Dokumentasjonen til programmet finn du [her](https://jupyterlab.readthedocs.io/en/stable/)
+
+## Miniconda
+
+1) Gå inn på [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+2) Last ned den nyaste installasjonsfila <br> ![](img/miniconda-download.png){width=80%}
+3) Installer miniconda ved å køyra fila. 
+4) Opne **terminal** på Mac og **Anaconda Prompt** på Windows. (På Mac kan du opna spotlight og søka etter programmet, på Windows kan du søka i start-menyen).
+5) I terminal/Anaconda Prompt skriv du desse kodelinjene (linje for linje)    
+    ```{bash}
+    conda config --add channels conda-forge 
+    conda config --set channel_priority strict ​​​​​​​
+    conda update -n base -c defaults conda 
+    conda install pandas matplotlib jupyterlab ipympl xarray python=3.11 
+    conda install scipy sympy
+    ```
+6) Når du skal bruke Jupyter lab opnar du terminal/Anaconda Prompt og skriv inn 
+    ```{bash}
+    jupyter lab
+    ```

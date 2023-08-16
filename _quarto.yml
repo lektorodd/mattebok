@@ -21,7 +21,10 @@ book:
     - part: sannsyn1.qmd
       chapters: 
         - sannsyn-terningar.ipynb
-    - summary.qmd
+        - sannsyn-samansette_forsok.ipynb
+  appendices:
+    - miniconda.qmd
+    
 
 
 format:
