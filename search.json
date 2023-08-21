@@ -1,15 +1,22 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "index.html#om-boka",
+    "href": "index.html#om-boka",
     "title": "Pythonmatte",
-    "section": "",
-    "text": "Om boka\nDenne boka inneheld ulike måtar ein kan nytta programmering på i matematikk (programfag på vgs).\nEg nyttar Python som programmeringsspråk gjennom heile boka 🐍.\n\n\n\n\n\n\nOBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med ujamne mellomrom.\n\n\nFor dei spesielt interesserte er boka laga med Quarto. For å lære meir om Quarto-bøker kan ein kikka her.\n\nLogo: Programmer icons created by juicy_fish - Flaticon"
+    "section": "Om boka",
+    "text": "Om boka\nDenne boka inneheld ulike måtar ein kan nytta programmering på i matematikk (programfag på vgs).\nEg nyttar Python som programmeringsspråk gjennom heile boka 🐍.\n\n\n\n\n\n\nOBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med ujamne mellomrom.\n\n\nFor dei spesielt interesserte er boka laga med Quarto. For å lære meir om Quarto-bøker kan ein kikka her."
+  },
+  {
+    "objectID": "index.html#om-meg",
+    "href": "index.html#om-meg",
+    "title": "Pythonmatte",
+    "section": "Om meg",
+    "text": "Om meg\n🔍 Her kan du lesa meir om meg\n\nLogo: Programmer icons created by juicy_fish - Flaticon"
   },
   {
     "objectID": "sannsyn1.html",
     "href": "sannsyn1.html",
-    "title": "Sannsyn og simulering S1/S2",
+    "title": "Sannsyn og simulering (S1/S2)",
     "section": "",
     "text": "I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python.\n…"
   },
@@ -18,7 +25,7 @@
     "href": "sannsyn-terningar.html#ein-terning",
     "title": "1  Terningar og intro til simulering",
     "section": "1.1 Ein terning 🎲",
-    "text": "1.1 Ein terning 🎲\n\nterning = rng.integers(1, 7)\nprint(terning)\n\n6\n\n\n\n\n\n\n\n\nMerk\n\n\n\nHer er verdien terning eit tal større eller lik 1 og mindre enn 7. Sidan det er heiltal me trekk er dermed \\[\\text{terning} \\in \\{1, 2, 3, 4, 5, 6\\}\\]\n\n\nFor å trilla fleire terningar kan me anten bruka løkker:\n\nfor i in range(10):\n    print(rng.integers(1, 7))\n\n3\n4\n1\n6\n5\n2\n1\n5\n1\n5\n\n\neller så kan me legga inn eit argument size i integers. Då blir output ein array (ein form for liste) med size terningar:\n\nterningar = rng.integers(1, 7, size=10)\nprint(terningar)\n\n[2 3 4 6 1 1 1 1 6 6]\n\n\nNo har me det me treng for å kunna simulera eit stokastisk forsøk og estimera sannsyn ut frå simuleringa. Til dømes kan me prøva å finna ut av kor sannunleg det er å trilla 5 eller 6 på ein terning:\n\nN = 1000000 # tal simuleringar\n\nterningar = rng.integers(1, 7, size=N)\n\ngunstige = sum(terningar &gt;= 5)\n\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet for 5 eller 6 er {sannsyn:.4f}\")\n\nSannsynet for 5 eller 6 er 0.3336\n\n\n\n\n\n\n\n\nForklaring: gunstige = sum(terningar &gt;= 5)\n\n\n\n\n\nFor å forstå denne ser me på eit døme:\n\narray = np.array([1, 2, 3, 4, 5, 6])\n\nstørre_enn_3 = array &gt; 3\n\nprint(array)\nprint(større_enn_3)\nprint(sum(større_enn_3))\n\n[1 2 3 4 5 6]\n[False False False  True  True  True]\n3\n\n\nAltså gjer me om verdiar til True eller False. Python reknar True som 1 og False som 0. Når me då summerer alle elementa i array får me antall True i arrayen."
+    "text": "1.1 Ein terning 🎲\n\nterning = rng.integers(1, 7)\nprint(terning)\n\n6\n\n\n\n\n\n\n\n\nMerk\n\n\n\nHer er verdien terning eit heiltal (integer) større eller lik 1 og mindre enn 7. Sidan det er heiltal me trekk er dermed \\[\\text{terning} \\in \\{1, 2, 3, 4, 5, 6\\}\\]\n\n\nFor å trilla fleire terningar kan me anten bruka løkker:\n\nfor i in range(10):\n    print(rng.integers(1, 7))\n\n3\n4\n1\n6\n5\n2\n1\n5\n1\n5\n\n\neller så kan me legga inn eit argument size i integers. Då blir output ein array (ein form for liste) med size terningar:\n\nterningar = rng.integers(1, 7, size=10)\nprint(terningar)\n\n[2 3 4 6 1 1 1 1 6 6]\n\n\nNo har me det me treng for å kunna simulera eit stokastisk forsøk og estimera sannsyn ut frå simuleringa. Til dømes kan me prøva å finna ut av kor sannunleg det er å trilla 5 eller 6 på ein terning:\n\nN = 1000000 # tal simuleringar\n\nterningar = rng.integers(1, 7, size=N)\n\ngunstige = sum(terningar &gt;= 5)\n\nsannsyn = gunstige / N\n\nprint(f\"Sannsynet for 5 eller 6 er {sannsyn:.4f}\")\n\nSannsynet for 5 eller 6 er 0.3336\n\n\n\n\n\n\n\n\nForklaring: gunstige = sum(terningar &gt;= 5)\n\n\n\n\n\nFor å forstå denne ser me på eit døme:\n\narray = np.array([1, 2, 3, 4, 5, 6])\n\nstørre_enn_3 = array &gt; 3\n\nprint(array)\nprint(større_enn_3)\nprint(sum(større_enn_3))\n\n[1 2 3 4 5 6]\n[False False False  True  True  True]\n3\n\n\nAltså gjer me om verdiar til True eller False. Python reknar True som 1 og False som 0. Når me då summerer alle elementa i array får me antall True i arrayen."
   },
   {
     "objectID": "sannsyn-terningar.html#fleire-terningar",
@@ -35,10 +42,59 @@
     "text": "1.3 Nøyaktighet 🎯\nSjekkar kva som skjer når me triller fleire og fleire terningar (eller ein terning fleire gongar). For å visa samanhengen plottar me resultatet. I dømet ser me på sannsynet for å trilla 4 på ein terning.\n\nimport matplotlib.pyplot as plt\n\n# antall kast\nN = 10000000\n\n# triller terningar\nterningar = rng.integers(1, 7, size=N)\n\n# finn den kumulative summen av terningar som er lik 4\nkumulativ_sum = np.cumsum(terningar == 4)\n\n# lager \"x-akse\" frå 1 til N\nx = np.arange(1, N + 1)\n\n# finn relativ frekvens\nrel_frekvens = kumulativ_sum / x\n\nplt.figure(figsize=(10, 5))                      # lagar ein figur med 10x5 mål\nplt.hlines(1/6, 0, N, color=\"red\")               # teiknar ein linje med farge \"red\" for den teoretiske verdien\nplt.plot(x, rel_frekvens)                        # plottar x-akse og y-akse    \nplt.xscale(\"log\")                                # logaritmisk x-akse\nplt.xlabel(\"Antall kast \\n merk: log. skala\")    # namn på x-aksen\nplt.ylabel(\"Relativ frekvens\")                   # namn på y-aksen\nplt.title(\"Relativ frekvens for terningar\")      # tittel på figur\nplt.show()\n\n\n\n\nHer ser me at di fleire kast me gjennomfører, di nærare kjem den relative frekvensen den teoretiske verdien for å trilla ein firar på vanleg terning.\n\\[ P(\\text{firar}) = \\frac{1}{6} \\approx 0.167 \\]"
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "sannsyn-samansette_forsok.html#teoretisk-sannsyn",
+    "href": "sannsyn-samansette_forsok.html#teoretisk-sannsyn",
+    "title": "2  Samansette forsøk - choice",
+    "section": "2.1 Teoretisk sannsyn",
+    "text": "2.1 Teoretisk sannsyn\nFørst kan me sjå på kva det teoretiske sannsynet er for desse to. Ofte når me bruker simulering er det fordi det er vanskeleg å finna svaret ved rekning, men i dette dømet er det ikkje så vanskeleg.\nMed tilbakelegging\n\\[\nP(\\text{BB}) = \\frac{7}{10} \\cdot \\frac{7}{10} = \\frac{49}{100} = 0.490\n\\]\nUtan tilbekelegging \\[\nP(\\text{BB}) = \\frac{7}{10} \\cdot \\frac{6}{9} = \\frac{42}{90} \\approx 0.467\n\\]"
+  },
+  {
+    "objectID": "sannsyn-samansette_forsok.html#simulering-av-twist-trekket",
+    "href": "sannsyn-samansette_forsok.html#simulering-av-twist-trekket",
+    "title": "2  Samansette forsøk - choice",
+    "section": "2.2 Simulering av twist-trekket",
+    "text": "2.2 Simulering av twist-trekket\n\n# importerar og lagar ein random generator\nfrom numpy.random import default_rng\nrng = default_rng()\n\n# antall simuleringar\nN = 1000000\n\n# lagar liste med twistskåla\ntwistskål = [\"Banan\"]*7 + [\"Daim\"]*3\n\n# skriv ut twistskåla\nprint(twistskål)\n\n['Banan', 'Banan', 'Banan', 'Banan', 'Banan', 'Banan', 'Banan', 'Daim', 'Daim', 'Daim']\n\n\n\n2.2.1 Med tilbakelegging\n\nBB = 0\n\nfor i in range(N):\n    twist = rng.choice(twistskål, size = 2)\n    if twist[0] == \"Banan\" and twist[1] == \"Banan\":\n        BB += 1\n\nrel_frek = BB/N\n\nprint(f\"Sannsynet for at me trekk to banantwist er {rel_frek}\")\n\nSannsynet for at me trekk to banantwist er 0.489409\n\n\n\n\n\n\n\n\nTips\n\n\n\nFor ein litt meir elegant kode kan me droppa if-setningen i løkka vår. Dette kan me gjera ved å gjera ein boolsk variabel (True eller False) om til eit heiltal. Då blir True = 1 og False = 0\n\nBB = 0\n\nfor i in range(N):\n    twist = rng.choice(twistskål, size = 2)\n    BB += int(twist[0] == \"Banan\" and twist[1] == \"Banan\")\n\nrel_frek = BB/N\n\nprint(f\"Sannsynet for at me trekk to banantwist er {rel_frek}\")\n\nSannsynet for at me trekk to banantwist er 0.489524\n\n\n\n\nMe kan sjå kor langt unna den teoretiske verdien me kjem:\n\nfeil = abs(rel_frek - 49/100) \nprint(f\"Feilen blir {round(feil, 6)} når me gjer {N} simuleringar\")\n\nFeilen blir 0.000476 når me gjer 1000000 simuleringar\n\n\nDersom me vil ha eit enno meir nøyaktig resultat kan me gjera fleire simuleringar, dette kjem me litt attende til seinare. Merk at programmet vil fort ta ganske lang tid å køyra etter kvart som talet på simuleringar aukar.\n\n\n2.2.2 Utan tilbakelegging\nForskjellen blir ikkje stor her. Det einaste me gjer er å legga til replace = False som argument i choice-funksjonen\n\nBB = 0\n\nfor i in range(N):\n    twist = rng.choice(twistskål, size = 2, replace = False)\n    if twist[0] == \"Banan\" and twist[1] == \"Banan\":\n        BB += 1\n\nrel_frek = BB/N\n\nprint(f\"Sannsynet for at me trekk to banantwist er {rel_frek}\")\n\nSannsynet for at me trekk to banantwist er 0.466383\n\n\n\nfeil = abs(rel_frek - 42/90) \nprint(f\"Feilen blir {round(feil, 6)} når me gjer {N} simuleringar\")\n\nFeilen blir 0.000284 når me gjer 1000000 simuleringar"
+  },
+  {
+    "objectID": "sannsyn-samansette_forsok.html#ikkje-uniforme-sannsynsmodellar",
+    "href": "sannsyn-samansette_forsok.html#ikkje-uniforme-sannsynsmodellar",
+    "title": "2  Samansette forsøk - choice",
+    "section": "2.3 Ikkje uniforme sannsynsmodellar",
+    "text": "2.3 Ikkje uniforme sannsynsmodellar\nDette dømet me har sett på er eit døme på ein ikkje-uniform sannsynsmodell, sidan sannsynet for Banan og Daim ikkje er det same. I starten laga me ei liste med alle twistane i skåla. I dette dømet er det praktisk, sidan me har eit lite utfallsrom (banan og daim) og kontroll på kor mange det er av kvar.\nAv og til kan det vera nyttig å definera ikkje-uniforme sannsynsmodellar på ein litt anna måte.\n\ntwistar = [\"Banan\", \"Daim\"]\nsannsyn = [7/10, 3/10]\n\nto_twist = rng.choice(twistar, size = 2, p = sannsyn)\n\nprint(f\"Me trekk {to_twist}\")\n\nMe trekk ['Banan' 'Daim']\n\n\nDette kan brukast viss me veit utfallsrommet og sannsynet for kvart av utfalla, ikkje nødvendigvis antallet. F.eks. blodtype hos tilfeldige personar i befolkningen."
+  },
+  {
+    "objectID": "følgerogrekker.html",
+    "href": "følgerogrekker.html",
+    "title": "Følger og rekker (S2/R2)",
     "section": "",
-    "text": "In summary, this book has no content whatsoever."
+    "text": "I dette kapittelet skal me sjå på korleis me kan bruka Python til å arbeida med følger og rekker.\nEi talfølge er ein serie tal. Dei kjem på ulike formar. Eit døme på ei talfølgje er:\n\nfor i in range(1, 6):\n    print(i, end=\",\")\n\nprint(\"...\")\n\n1,2,3,4,5,...\n\n\nDette kjenner me att som dei 5 første naturlege tala, \\(\\mathbb{N}\\), og er eit enkelt døme på ei talfølgje. Kvart av tala i følgja kallar me for ledd. Det første leddet vert kalla \\(a_1\\) medan det \\(n\\)-te leddet vert kalla \\(a_n\\).\nVidare i kapittelet skal me sjå på ulike typer talfølgjer, eksplisitte og rekursive funksjonar for å finna ledd i talfølgjer, og til slutt skal me sjå på rekker."
+  },
+  {
+    "objectID": "følger.html#aritmetiske-følger",
+    "href": "følger.html#aritmetiske-følger",
+    "title": "3  Følger",
+    "section": "3.1 Aritmetiske følger",
+    "text": "3.1 Aritmetiske følger\nEit anna døme på ei aritmetisk talfølgje er denne\n\\[ 3, 7, 11, 15, ...\\]\nHer ser me at det første leddet \\(a_1 = 3\\) og at differansen \\(d=4\\).\nAt det er ein fast differanse mellom kvart av ledda betyr at om me skal finna eit ledd (\\(a_n\\)) så må me ta leddet før (\\(a_{n-1}\\)) og legga til differansen (\\(d\\)). Dermed får me\n\\[a_{n} = a_{n-1} + d\\]\nFrå dømet over ser me at det stemmer, \\(7 = 3 + 4\\) og \\(11 = 7 + 4\\) osb.\n\n3.1.1 Rekursiv formel for ledd n\nSamanhengen over kan me nytta for å finna \\(a_n\\) rekursivt. Rekursjon handlar om gjentaking, så tanken er at me kan gjenta formelen for å finna ledd \\(n\\). Me kan laga ein funksjon som kun tek utgangspunkt i opplysningen om at \\(a_{n} = a_{n-1} + d\\).\n\ndef a(n):\n    return a(n-1) + 4\n\nprint(a(4))\n\nRecursionError: maximum recursion depth exceeded\n\n\nMen om du prøver å køyra denne koden vil du få ein feil:\n\nRecursionError: maximum recursion depth exceeded\n\nOm du ser på koden, ser du kanskje kva som er problemet?\nDet let seg løysa om me definerer ein rekursjonsbotn (i dette tilfellet \\(a_1\\)). Me prøver på nytt:\n\ndef a(n):\n    if n == 1:\n        return 3\n    else: \n        return a(n-1) + 4\n\nprint(a(4))\n\n15\n\n\nDenne funksjonen kan me bruka for å t.d. skriva ut dei 10 første ledda i følgja:\n\nfor i in range(1, 11):\n    print(a(i), end = \", \")\n\nprint(\"...\")\n\n3, 7, 11, 15, 19, 23, 27, 31, 35, 39, ...\n\n\nUlempen med denne rekursive funksjonen er at han må gjennom alle dei føregåande ledda for kvart ledd du bruker han for å finna. Så om du skal finna \\(a_1000\\) vil formelen finna alle ledda før. Og på nytt når du ser etter \\(a_1001\\)… Det kan fort bli både tidkrevjande og tungvint, sjølv for datamaskina.\n\n\n3.1.2 Eksplisitt formel for ledd n\nMe kan sjå om me finn ein eksplisitt måte å finna \\(a_n\\) på (altså finna direkte, utan rekursjon). Me ser på dømet igjen.\n\\[3, 7, 11, 15, ...\\]\nMe ser at \\[\n    \\begin{aligned}\n        a_2 &= 7 = 3 + 4 \\\\\n        a_3 &= 11 = 7 + 4 = 3 + 4 + 4 \\\\\n        a_4 &= 15 = 11 + 4 = 7 + 4 + 4 = 3 + 4 + 4 + 4\n    \\end{aligned}\n\\]\nAltså er \\[a_n = a_1 + (n-1)d\\] som me kan programmera som\n\ndef a(n):\n    return 3 + (n-1)*4\n\nprint(a(4))\n\n15\n\n\nOg igjen kan me skriva ut dei ti første ledda:f\n\nfor i in range(1, 11):\n    print(a(i), end=\", \")\n\nprint(\"...\")\n\n3, 7, 11, 15, 19, 23, 27, 31, 35, 39, ..."
+  },
+  {
+    "objectID": "rekker1.html",
+    "href": "rekker1.html",
+    "title": "4  Rekker",
+    "section": "",
+    "text": "a = \"test\""
+  },
+  {
+    "objectID": "miniconda.html#jupyter-lab",
+    "href": "miniconda.html#jupyter-lab",
+    "title": "Vedlegg A — Tips til programmeringa",
+    "section": "A.1 Jupyter lab",
+    "text": "A.1 Jupyter lab\nEit godt verktøy for å laga, endra og køyra jupyterfiler er Jupyter Lab. Dette programmet kan installerast på mange måtar. Mitt tips er å installera det gjennom Miniconda. Dokumentasjonen til programmet finn du her"
+  },
+  {
+    "objectID": "miniconda.html#miniconda",
+    "href": "miniconda.html#miniconda",
+    "title": "Vedlegg A — Tips til programmeringa",
+    "section": "A.2 Miniconda",
+    "text": "A.2 Miniconda\n\nGå inn på https://docs.conda.io/en/latest/miniconda.html\nLast ned den nyaste installasjonsfila  \nInstaller miniconda ved å køyra fila.\nOpne terminal på Mac og Anaconda Prompt på Windows. (På Mac kan du opna spotlight og søka etter programmet, på Windows kan du søka i start-menyen).\nI terminal/Anaconda Prompt skriv du desse kodelinjene (linje for linje)\nconda config --add channels conda-forge \nconda config --set channel_priority strict ​​​​​​​\nconda update -n base -c defaults conda \nconda install pandas matplotlib jupyterlab ipympl xarray python=3.11 \nconda install scipy sympy\nNår du skal bruke Jupyter lab opnar du terminal/Anaconda Prompt og skriv inn\njupyter lab"
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pythonmatte - Sannsyn og simulering (S1/S2)</title>
+<title>Pythonmatte - Vedlegg A — Tips til programmeringa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sannsyn-terningar.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./rekker1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sannsyn1.html">Sannsyn og simulering (S1/S2)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./miniconda.html">Vedlegg</a></li><li class="breadcrumb-item"><a href="./miniconda.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Tips til programmeringa</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -131,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./sannsyn1.html" class="sidebar-item-text sidebar-link active">
+            <a href="./sannsyn1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sannsyn og simulering (S1/S2)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Bytt avsnitt">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -186,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./miniconda.html" class="sidebar-item-text sidebar-link">
+  <a href="./miniconda.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Tips til programmeringa</span></span></a>
   </div>
 </li>
@@ -198,14 +197,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innhald</h2>
+   
+  <ul>
+  <li><a href="#jupyter-lab" id="toc-jupyter-lab" class="nav-link active" data-scroll-target="#jupyter-lab"><span class="header-section-number">A.1</span> Jupyter lab</a></li>
+  <li><a href="#miniconda" id="toc-miniconda" class="nav-link" data-scroll-target="#miniconda"><span class="header-section-number">A.2</span> Miniconda</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lektorodd/mattebok/blob/main/miniconda.qmd" class="toc-action">Vis kjelde</a></p><p><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action">Meld inn problem</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sannsyn og simulering (S1/S2)</h1>
+<h1 class="title">Vedlegg A — Tips til programmeringa</h1>
 </div>
 
 
@@ -220,10 +226,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python.</p>
-<p>…</p>
+<p>Det er mange måtar ein kan skrive og kompilere Pythonkode på. Beste tips for programmering i matematikk er å bruka <a href="https://docs.jupyter.org/en/latest/#what-is-a-notebook">Jupyter-notatbøker</a>. Dette er filer (<code>.ipynb</code>) der ein kan kombinera små snuttar med Pythonkode og tekst (i <code>markdown</code>-format). DEnne boka er stort sett basert på jupyter-filer. <a href="https://github.com/lektorodd/mattebok/blob/main/sannsyn-terningar.ipynb">Dette</a> er eit døme på korleis ei slik fil ser ut.</p>
+<section id="jupyter-lab" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="jupyter-lab"><span class="header-section-number">A.1</span> Jupyter lab</h2>
+<p>Eit godt verktøy for å laga, endra og køyra jupyterfiler er Jupyter Lab. Dette programmet kan installerast på mange måtar. Mitt tips er å installera det gjennom <em>Miniconda</em>. Dokumentasjonen til programmet finn du <a href="https://jupyterlab.readthedocs.io/en/stable/">her</a></p>
+</section>
+<section id="miniconda" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="miniconda"><span class="header-section-number">A.2</span> Miniconda</h2>
+<ol type="1">
+<li><p>Gå inn på <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a></p></li>
+<li><p>Last ned den nyaste installasjonsfila <br> <img src="img/miniconda-download.png" class="img-fluid" style="width:80.0%"></p></li>
+<li><p>Installer miniconda ved å køyra fila.</p></li>
+<li><p>Opne <strong>terminal</strong> på Mac og <strong>Anaconda Prompt</strong> på Windows. (På Mac kan du opna spotlight og søka etter programmet, på Windows kan du søka i start-menyen).</p></li>
+<li><p>I terminal/Anaconda Prompt skriv du desse kodelinjene (linje for linje)</p>
+<pre class="{bash}"><code>conda config --add channels conda-forge 
+conda config --set channel_priority strict ​​​​​​​
+conda update -n base -c defaults conda 
+conda install pandas matplotlib jupyterlab ipympl xarray python=3.11 
+conda install scipy sympy</code></pre></li>
+<li><p>Når du skal bruke Jupyter lab opnar du terminal/Anaconda Prompt og skriv inn</p>
+<pre class="{bash}"><code>jupyter lab</code></pre></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -461,18 +487,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Om boka</span>
+      <a href="./rekker1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Rekker</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sannsyn-terningar.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terningar og intro til simulering</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lektorodd/mattebok/blob/main/sannsyn1.qmd" class="toc-action">Vis kjelde</a></p><p><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action">Meld inn problem</a></p></div></div></div></div></footer></body></html>
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pythonmatte - 1&nbsp; Terningar og intro til simulering</title>
+<title>Pythonmatte - 2&nbsp; Samansette forsøk - choice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sannsyn-samansette_forsok.html" rel="next">
-<link href="./sannsyn1.html" rel="prev">
+<link href="./følgerogrekker.html" rel="next">
+<link href="./sannsyn-terningar.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sannsyn1.html">Sannsyn og simulering (S1/S2)</a></li><li class="breadcrumb-item"><a href="./sannsyn-terningar.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terningar og intro til simulering</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sannsyn1.html">Sannsyn og simulering (S1/S2)</a></li><li class="breadcrumb-item"><a href="./sannsyn-samansette_forsok.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Samansette forsøk - choice</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -176,13 +176,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sannsyn-terningar.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sannsyn-terningar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terningar og intro til simulering</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sannsyn-samansette_forsok.html" class="sidebar-item-text sidebar-link">
+  <a href="./sannsyn-samansette_forsok.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Samansette forsøk - choice</span></span></a>
   </div>
 </li>
@@ -238,18 +238,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Innhald</h2>
    
   <ul>
-  <li><a href="#ein-terning" id="toc-ein-terning" class="nav-link active" data-scroll-target="#ein-terning"><span class="header-section-number">1.1</span> Ein terning <span class="emoji" data-emoji="game_die">🎲</span></a></li>
-  <li><a href="#fleire-terningar" id="toc-fleire-terningar" class="nav-link" data-scroll-target="#fleire-terningar"><span class="header-section-number">1.2</span> Fleire terningar <span class="emoji" data-emoji="game_die">🎲</span> <span class="emoji" data-emoji="game_die">🎲</span></a></li>
-  <li><a href="#nøyaktighet" id="toc-nøyaktighet" class="nav-link" data-scroll-target="#nøyaktighet"><span class="header-section-number">1.3</span> Nøyaktighet <span class="emoji" data-emoji="dart">🎯</span></a></li>
+  <li><a href="#teoretisk-sannsyn" id="toc-teoretisk-sannsyn" class="nav-link active" data-scroll-target="#teoretisk-sannsyn"><span class="header-section-number">2.1</span> Teoretisk sannsyn</a></li>
+  <li><a href="#simulering-av-twist-trekket" id="toc-simulering-av-twist-trekket" class="nav-link" data-scroll-target="#simulering-av-twist-trekket"><span class="header-section-number">2.2</span> Simulering av twist-trekket</a>
+  <ul class="collapse">
+  <li><a href="#med-tilbakelegging" id="toc-med-tilbakelegging" class="nav-link" data-scroll-target="#med-tilbakelegging"><span class="header-section-number">2.2.1</span> Med tilbakelegging</a></li>
+  <li><a href="#utan-tilbakelegging" id="toc-utan-tilbakelegging" class="nav-link" data-scroll-target="#utan-tilbakelegging"><span class="header-section-number">2.2.2</span> Utan tilbakelegging</a></li>
+  </ul></li>
+  <li><a href="#ikkje-uniforme-sannsynsmodellar" id="toc-ikkje-uniforme-sannsynsmodellar" class="nav-link" data-scroll-target="#ikkje-uniforme-sannsynsmodellar"><span class="header-section-number">2.3</span> Ikkje uniforme sannsynsmodellar</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lektorodd/mattebok/blob/main/sannsyn-terningar.ipynb" class="toc-action">Vis kjelde</a></p><p><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action">Meld inn problem</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lektorodd/mattebok/blob/main/sannsyn-samansette_forsok.ipynb" class="toc-action">Vis kjelde</a></p><p><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action">Meld inn problem</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terningar og intro til simulering</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Samansette forsøk - choice</span></h1>
 </div>
 
 
@@ -264,202 +268,137 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Ein fin stad å starta med simulering er med terningar <span class="emoji" data-emoji="game_die">🎲</span> Her er sannsynet <em>uniformt</em> (det er like sannsynleg å få 2 som 5), og dei ulike utfalla er heiltal.</p>
-<p>Det første som må gjerast er å gjera i stand “trekkaren” vår. Eg bruker her ein tilfeldighetsgenerator frå <code>NumPy</code> (dokumentasjon <a href="https://numpy.org/doc/stable/reference/random/index.html?highlight=random#module-numpy.random">her</a>).</p>
+<p>No skal me sjå på korleis me kan simulera eit enkelt samansett forsøk. Oppgåva me skal sjå på er denne:</p>
+<blockquote class="blockquote">
+<p>I ei skål ligg det 7 banan-twist og 3 daim-twist. Kva er sannsynet for at me får banan når me trekk ut to bitar frå skåla. (Både med og utan tilbakelegging)</p>
+</blockquote>
+<section id="teoretisk-sannsyn" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="teoretisk-sannsyn"><span class="header-section-number">2.1</span> Teoretisk sannsyn</h2>
+<p>Først kan me sjå på kva det teoretiske sannsynet er for desse to. Ofte når me bruker simulering er det fordi det er vanskeleg å finna svaret ved rekning, men i dette dømet er det ikkje så vanskeleg.</p>
+<p><strong>Med tilbakelegging</strong></p>
+<p><span class="math display">\[
+P(\text{BB}) = \frac{7}{10} \cdot \frac{7}{10} = \frac{49}{100} = 0.490
+\]</span></p>
+<p><strong>Utan tilbekelegging</strong> <span class="math display">\[
+P(\text{BB}) = \frac{7}{10} \cdot \frac{6}{9} = \frac{42}{90} \approx 0.467
+\]</span></p>
+</section>
+<section id="simulering-av-twist-trekket" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="simulering-av-twist-trekket"><span class="header-section-number">2.2</span> Simulering av twist-trekket</h2>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># importerar og lagar ein random generator</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> default_rng</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> default_rng()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># antall simuleringar</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># lagar liste med twistskåla</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>twistskål <span class="op">=</span> [<span class="st">"Banan"</span>]<span class="op">*</span><span class="dv">7</span> <span class="op">+</span> [<span class="st">"Daim"</span>]<span class="op">*</span><span class="dv">3</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># skriv ut twistskåla</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(twistskål)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Banan', 'Banan', 'Banan', 'Banan', 'Banan', 'Banan', 'Banan', 'Daim', 'Daim', 'Daim']</code></pre>
+</div>
+</div>
+<section id="med-tilbakelegging" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="med-tilbakelegging"><span class="header-section-number">2.2.1</span> Med tilbakelegging</h3>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>BB <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    twist <span class="op">=</span> rng.choice(twistskål, size <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> twist[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"Banan"</span> <span class="kw">and</span> twist[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"Banan"</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        BB <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>rel_frek <span class="op">=</span> BB<span class="op">/</span>N</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at me trekk to banantwist er </span><span class="sc">{</span>rel_frek<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sannsynet for at me trekk to banantwist er 0.489409</code></pre>
 </div>
-<p>Når me no har klargjort generatoren kan me bruka den innebygde <code>integers</code>-funksjonen for å trilla ein terning.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Merk
+Tips
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Dei to linjene med kode over <strong>må</strong> vera med i programmet for at det skal funka. I mange av døma i boka er ikkje desse to linjene med i alle kodesnuttane.</p>
-</div>
-</div>
-<section id="ein-terning" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="ein-terning"><span class="header-section-number">1.1</span> Ein terning <span class="emoji" data-emoji="game_die">🎲</span></h2>
+<p>For ein litt meir elegant kode <em>kan</em> me droppa if-setningen i løkka vår. Dette kan me gjera ved å gjera ein boolsk variabel (<code>True</code> eller <code>False</code>) om til eit heiltal. Då blir <code>True = 1</code> og <code>False = 0</code></p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>terning <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(terning)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>BB <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    twist <span class="op">=</span> rng.choice(twistskål, size <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    BB <span class="op">+=</span> <span class="bu">int</span>(twist[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"Banan"</span> <span class="kw">and</span> twist[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"Banan"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>rel_frek <span class="op">=</span> BB<span class="op">/</span>N</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at me trekk to banantwist er </span><span class="sc">{</span>rel_frek<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>6</code></pre>
+<pre><code>Sannsynet for at me trekk to banantwist er 0.489524</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Merk
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Her er verdien <code>terning</code> eit heiltal (<em>integer</em>) <strong>større eller lik</strong> 1 og <strong>mindre enn</strong> 7. <br>Sidan det er heiltal me trekk er dermed <span class="math display">\[\text{terning} \in \{1, 2, 3, 4, 5, 6\}\]</span></p>
-</div>
-</div>
-<p>For å trilla fleire terningar kan me anten bruka løkker:</p>
+<p>Me kan sjå kor langt unna den teoretiske verdien me kjem:</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(rng.integers(<span class="dv">1</span>, <span class="dv">7</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>feil <span class="op">=</span> <span class="bu">abs</span>(rel_frek <span class="op">-</span> <span class="dv">49</span><span class="op">/</span><span class="dv">100</span>) </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Feilen blir </span><span class="sc">{</span><span class="bu">round</span>(feil, <span class="dv">6</span>)<span class="sc">}</span><span class="ss"> når me gjer </span><span class="sc">{</span>N<span class="sc">}</span><span class="ss"> simuleringar"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3
-4
-1
-6
-5
-2
-1
-5
-1
-5</code></pre>
+<pre><code>Feilen blir 0.000476 når me gjer 1000000 simuleringar</code></pre>
 </div>
 </div>
-<p>eller så kan me legga inn eit argument <code>size</code> i <code>integers</code>. Då blir output ein array (ein form for liste) med <code>size</code> terningar:</p>
+<p>Dersom me vil ha eit enno meir nøyaktig resultat kan me gjera fleire simuleringar, dette kjem me litt attende til seinare. Merk at programmet vil fort ta ganske lang tid å køyra etter kvart som talet på simuleringar aukar.</p>
+</section>
+<section id="utan-tilbakelegging" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="utan-tilbakelegging"><span class="header-section-number">2.2.2</span> Utan tilbakelegging</h3>
+<p>Forskjellen blir ikkje stor her. Det einaste me gjer er å legga til <code>replace = False</code> som argument i <code>choice</code>-funksjonen</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(terningar)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>BB <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    twist <span class="op">=</span> rng.choice(twistskål, size <span class="op">=</span> <span class="dv">2</span>, replace <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> twist[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"Banan"</span> <span class="kw">and</span> twist[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"Banan"</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        BB <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>rel_frek <span class="op">=</span> BB<span class="op">/</span>N</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for at me trekk to banantwist er </span><span class="sc">{</span>rel_frek<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[2 3 4 6 1 1 1 1 6 6]</code></pre>
+<pre><code>Sannsynet for at me trekk to banantwist er 0.466383</code></pre>
 </div>
 </div>
-<p>No har me det me treng for å kunna simulera eit stokastisk forsøk og estimera sannsyn ut frå simuleringa. Til dømes kan me prøva å finna ut av kor sannunleg det er å trilla 5 eller 6 på ein terning:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>feil <span class="op">=</span> <span class="bu">abs</span>(rel_frek <span class="op">-</span> <span class="dv">42</span><span class="op">/</span><span class="dv">90</span>) </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Feilen blir </span><span class="sc">{</span><span class="bu">round</span>(feil, <span class="dv">6</span>)<span class="sc">}</span><span class="ss"> når me gjer </span><span class="sc">{</span>N<span class="sc">}</span><span class="ss"> simuleringar"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Feilen blir 0.000284 når me gjer 1000000 simuleringar</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="ikkje-uniforme-sannsynsmodellar" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="ikkje-uniforme-sannsynsmodellar"><span class="header-section-number">2.3</span> Ikkje uniforme sannsynsmodellar</h2>
+<p>Dette dømet me har sett på er eit døme på ein ikkje-uniform sannsynsmodell, sidan sannsynet for Banan og Daim ikkje er det same. I starten laga me ei liste med alle twistane i skåla. I dette dømet er det praktisk, sidan me har eit lite utfallsrom (banan og daim) og kontroll på kor mange det er av kvar.</p>
+<p>Av og til kan det vera nyttig å definera ikkje-uniforme sannsynsmodellar på ein litt anna måte.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span> <span class="co"># tal simuleringar</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(terningar <span class="op">&gt;=</span> <span class="dv">5</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for 5 eller 6 er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>twistar <span class="op">=</span> [<span class="st">"Banan"</span>, <span class="st">"Daim"</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> [<span class="dv">7</span><span class="op">/</span><span class="dv">10</span>, <span class="dv">3</span><span class="op">/</span><span class="dv">10</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>to_twist <span class="op">=</span> rng.choice(twistar, size <span class="op">=</span> <span class="dv">2</span>, p <span class="op">=</span> sannsyn)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Me trekk </span><span class="sc">{</span>to_twist<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Sannsynet for 5 eller 6 er 0.3336</code></pre>
+<pre><code>Me trekk ['Banan' 'Daim']</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Forklaring: <code>gunstige = sum(terningar &gt;= 5)</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>For å forstå denne ser me på eit døme:</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>større_enn_3 <span class="op">=</span> array <span class="op">&gt;</span> <span class="dv">3</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(array)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(større_enn_3)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(større_enn_3))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1 2 3 4 5 6]
-[False False False  True  True  True]
-3</code></pre>
-</div>
-</div>
-<p>Altså gjer me om verdiar til <code>True</code> eller <code>False</code>. Python reknar <code>True</code> som 1 og <code>False</code> som 0. Når me då summerer alle elementa i <code>array</code> får me antall <code>True</code> i arrayen.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="fleire-terningar" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fleire-terningar"><span class="header-section-number">1.2</span> Fleire terningar <span class="emoji" data-emoji="game_die">🎲</span> <span class="emoji" data-emoji="game_die">🎲</span></h2>
-<p>Spørsmål som “Kva er sannsynet for at produktet av to terningar er 8 eller mindre” er fint å finna svar på ved hjelp av simulering:</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>terning1 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>terning2 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>produkt <span class="op">=</span> terning1 <span class="op">*</span> terning2</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(produkt <span class="op">&lt;=</span> <span class="dv">8</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Sannsynet er 0.4452</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Forklaring: <code>produkt = terning1 * terning2</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Kodelikna finn produktet av element på samme plass i dei to arrayane. Sjekk dømet:</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>])</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">*</span> b</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[ 6 14 24 36 50]</code></pre>
-</div>
-</div>
-<p><span class="math inline">\(1\cdot 6 = 6\)</span> og <span class="math inline">\(2\cdot 7 = 14\)</span>…</p>
-</div>
-</div>
-</div>
-</section>
-<section id="nøyaktighet" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="nøyaktighet"><span class="header-section-number">1.3</span> Nøyaktighet <span class="emoji" data-emoji="dart">🎯</span></h2>
-<p>Sjekkar kva som skjer når me triller fleire og fleire terningar (eller ein terning fleire gongar). For å visa samanhengen plottar me resultatet. I dømet ser me på sannsynet for å trilla 4 på ein terning.</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb16-2"><a href="#cb16-2"></a></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="co"># antall kast</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>N <span class="op">=</span> <span class="dv">10000000</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="co"># triller terningar</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb16-8"><a href="#cb16-8"></a></span>
-<span id="cb16-9"><a href="#cb16-9"></a><span class="co"># finn den kumulative summen av terningar som er lik 4</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>kumulativ_sum <span class="op">=</span> np.cumsum(terningar <span class="op">==</span> <span class="dv">4</span>)</span>
-<span id="cb16-11"><a href="#cb16-11"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a><span class="co"># lager "x-akse" frå 1 til N</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a>x <span class="op">=</span> np.arange(<span class="dv">1</span>, N <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb16-14"><a href="#cb16-14"></a></span>
-<span id="cb16-15"><a href="#cb16-15"></a><span class="co"># finn relativ frekvens</span></span>
-<span id="cb16-16"><a href="#cb16-16"></a>rel_frekvens <span class="op">=</span> kumulativ_sum <span class="op">/</span> x</span>
-<span id="cb16-17"><a href="#cb16-17"></a></span>
-<span id="cb16-18"><a href="#cb16-18"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))                      <span class="co"># lagar ein figur med 10x5 mål</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a>plt.hlines(<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, <span class="dv">0</span>, N, color<span class="op">=</span><span class="st">"red"</span>)               <span class="co"># teiknar ein linje med farge "red" for den teoretiske verdien</span></span>
-<span id="cb16-20"><a href="#cb16-20"></a>plt.plot(x, rel_frekvens)                        <span class="co"># plottar x-akse og y-akse    </span></span>
-<span id="cb16-21"><a href="#cb16-21"></a>plt.xscale(<span class="st">"log"</span>)                                <span class="co"># logaritmisk x-akse</span></span>
-<span id="cb16-22"><a href="#cb16-22"></a>plt.xlabel(<span class="st">"Antall kast </span><span class="ch">\n</span><span class="st"> merk: log. skala"</span>)    <span class="co"># namn på x-aksen</span></span>
-<span id="cb16-23"><a href="#cb16-23"></a>plt.ylabel(<span class="st">"Relativ frekvens"</span>)                   <span class="co"># namn på y-aksen</span></span>
-<span id="cb16-24"><a href="#cb16-24"></a>plt.title(<span class="st">"Relativ frekvens for terningar"</span>)      <span class="co"># tittel på figur</span></span>
-<span id="cb16-25"><a href="#cb16-25"></a>plt.show()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="sannsyn-terningar_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
-</div>
-</div>
-<p>Her ser me at di fleire kast me gjennomfører, di nærare kjem den relative frekvensen den teoretiske verdien for å trilla ein firar på vanleg terning.</p>
-<p><span class="math display">\[ P(\text{firar}) = \frac{1}{6} \approx 0.167 \]</span></p>
+<p>Dette kan brukast viss me veit utfallsrommet og sannsynet for kvart av utfalla, ikkje nødvendigvis antallet. F.eks. blodtype hos tilfeldige personar i befolkningen.</p>
 
 
 </section>
@@ -700,13 +639,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sannsyn1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sannsyn og simulering (S1/S2)</span>
+      <a href="./sannsyn-terningar.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terningar og intro til simulering</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sannsyn-samansette_forsok.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Samansette forsøk - choice</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./følgerogrekker.html" class="pagination-link">
+        <span class="nav-page-text">Følger og rekker (S2/R2)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
