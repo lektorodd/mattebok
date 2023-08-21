@@ -1,0 +1,22 @@
+# Følger og rekker (S2/R2)
+
+::: {.hidden}
+\newcommand{\N}{\mathbb{N}}
+:::
+
+I dette kapittelet skal me sjå på korleis me kan bruka Python til å arbeida med følger og rekker. 
+
+Ei talfølge er ein serie tal. Dei kjem på ulike formar. Eit døme på ei talfølgje er:
+
+```{python}
+#| code-line-numbers: true
+
+for i in range(1, 6):
+    print(i, end=",")
+
+print("...")
+```
+
+Dette kjenner me att som dei 5 første naturlege tala, $\N$, og er eit enkelt døme på ei talfølgje. Kvart av tala i følgja kallar me for *ledd*. Det første leddet vert kalla $a_1$ medan det $n$-te leddet vert kalla $a_n$. 
+
+Vidare i kapittelet skal me sjå på ulike typer talfølgjer, eksplisitte og rekursive funksjonar for å finna ledd i talfølgjer, og til slutt skal me sjå på rekker. 

@@ -22,6 +22,10 @@ book:
       chapters: 
         - sannsyn-terningar.ipynb
         - sannsyn-samansette_forsok.ipynb
+    - part: følgerogrekker.qmd
+      chapters: 
+      - følger.ipynb
+      - rekker1.ipynb
   appendices:
     - miniconda.qmd
     
