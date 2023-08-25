@@ -7,15 +7,12 @@ $body-color: #293241;
 $link-color: #EE6C4D;
 
 // Fontar
-$headings-font-family: "Secular One", ;
+$headings-font-family: "Secular One";
+
 
 /*-- scss:rules --*/
 #title-block-header.quarto-title-block.default .quarto-title .title {
     color: white;
-}
-
-.navbar {
-    color:focus white;
 }
 
 .quarto-title .quarto-categories .quarto-category {

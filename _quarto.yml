@@ -7,6 +7,8 @@ book:
   title: "Pythonmatte"
   subtitle: "Programmering i matematikk programfag på vgs"
   author: "Torodd F. Ottestad"
+  favicon: img/programmer.png
+
   
   repo-url: https://github.com/lektorodd/mattebok
   repo-branch: main
@@ -22,7 +24,7 @@ book:
       chapters: 
         - sannsyn-terningar.ipynb
         - sannsyn-samansette_forsok.ipynb
-    - part: følgerogrekker.qmd
+    - part: folgerogrekker.qmd
       chapters: 
       - følger.ipynb
       - rekker1.ipynb
@@ -35,7 +37,7 @@ format:
   html:
     theme: 
     - cosmo
-    - cutsom.scss
+    - custom.scss
   pdf:
     documentclass: scrreprt
 
