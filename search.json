@@ -63,8 +63,8 @@
     "text": "2.3 Ikkje uniforme sannsynsmodellar\nDette dømet me har sett på er eit døme på ein ikkje-uniform sannsynsmodell, sidan sannsynet for Banan og Daim ikkje er det same. I starten laga me ei liste med alle twistane i skåla. I dette dømet er det praktisk, sidan me har eit lite utfallsrom (banan og daim) og kontroll på kor mange det er av kvar.\nAv og til kan det vera nyttig å definera ikkje-uniforme sannsynsmodellar på ein litt anna måte.\n\ntwistar = [\"Banan\", \"Daim\"]\nsannsyn = [7/10, 3/10]\n\nto_twist = rng.choice(twistar, size = 2, p = sannsyn)\n\nprint(f\"Me trekk {to_twist}\")\n\nMe trekk ['Banan' 'Daim']\n\n\nDette kan brukast viss me veit utfallsrommet og sannsynet for kvart av utfalla, ikkje nødvendigvis antallet. F.eks. blodtype hos tilfeldige personar i befolkningen."
   },
   {
-    "objectID": "følgerogrekker.html",
-    "href": "følgerogrekker.html",
+    "objectID": "folgerogrekker.html",
+    "href": "folgerogrekker.html",
     "title": "Følger og rekker (S2/R2)",
     "section": "",
     "text": "I dette kapittelet skal me sjå på korleis me kan bruka Python til å arbeida med følger og rekker.\nEi talfølge er ein serie tal. Dei kjem på ulike formar. Eit døme på ei talfølgje er:\n\nfor i in range(1, 6):\n    print(i, end=\",\")\n\nprint(\"...\")\n\n1,2,3,4,5,...\n\n\nDette kjenner me att som dei 5 første naturlege tala, \\(\\mathbb{N}\\), og er eit enkelt døme på ei talfølgje. Kvart av tala i følgja kallar me for ledd. Det første leddet vert kalla \\(a_1\\) medan det \\(n\\)-te leddet vert kalla \\(a_n\\).\nVidare i kapittelet skal me sjå på ulike typer talfølgjer, eksplisitte og rekursive funksjonar for å finna ledd i talfølgjer, og til slutt skal me sjå på rekker."
