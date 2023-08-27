@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -192,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./folgerogrekker.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Følger og rekker (S2/R2)</span></a>
+ <span class="menu-text">Følgjer og rekker (S2/R2)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Bytt avsnitt">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./følger.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Følger</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Følgjer</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -268,8 +268,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ein fin stad å starta med simulering er med terningar <span class="emoji" data-emoji="game_die">🎲</span> Her er sannsynet <em>uniformt</em> (det er like sannsynleg å få 2 som 5), og dei ulike utfalla er heiltal.</p>
 <p>Det første som må gjerast er å gjera i stand “trekkaren” vår. Eg bruker her ein tilfeldighetsgenerator frå <code>NumPy</code> (dokumentasjon <a href="https://numpy.org/doc/stable/reference/random/index.html?highlight=random#module-numpy.random">her</a>).</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2"></a>rng <span class="op">=</span> np.random.default_rng()</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Når me no har klargjort generatoren kan me bruka den innebygde <code>integers</code>-funksjonen for å trilla ein terning.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -288,8 +288,8 @@ Merk
 <section id="ein-terning" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="ein-terning"><span class="header-section-number">1.1</span> Ein terning <span class="emoji" data-emoji="game_die">🎲</span></h2>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>terning <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(terning)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>terning <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">print</span>(terning)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
 </div>
@@ -309,8 +309,8 @@ Merk
 </div>
 <p>For å trilla fleire terningar kan me anten bruka løkker:</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(rng.integers(<span class="dv">1</span>, <span class="dv">7</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="bu">print</span>(rng.integers(<span class="dv">1</span>, <span class="dv">7</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3
 4
@@ -326,23 +326,23 @@ Merk
 </div>
 <p>eller så kan me legga inn eit argument <code>size</code> i <code>integers</code>. Då blir output ein array (ein form for liste) med <code>size</code> terningar:</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(terningar)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(terningar)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[2 3 4 6 1 1 1 1 6 6]</code></pre>
 </div>
 </div>
 <p>No har me det me treng for å kunna simulera eit stokastisk forsøk og estimera sannsyn ut frå simuleringa. Til dømes kan me prøva å finna ut av kor sannunleg det er å trilla 5 eller 6 på ein terning:</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span> <span class="co"># tal simuleringar</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(terningar <span class="op">&gt;=</span> <span class="dv">5</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for 5 eller 6 er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>N <span class="op">=</span> <span class="dv">1000000</span> <span class="co"># tal simuleringar</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>terningar <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(terningar <span class="op">&gt;=</span> <span class="dv">5</span>)</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet for 5 eller 6 er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sannsynet for 5 eller 6 er 0.3336</code></pre>
 </div>
@@ -361,13 +361,13 @@ Forklaring: <code>gunstige = sum(terningar &gt;= 5)</code>
 <div class="callout-body-container callout-body">
 <p>For å forstå denne ser me på eit døme:</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>større_enn_3 <span class="op">=</span> array <span class="op">&gt;</span> <span class="dv">3</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(array)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(større_enn_3)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(større_enn_3))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>større_enn_3 <span class="op">=</span> array <span class="op">&gt;</span> <span class="dv">3</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="bu">print</span>(array)</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="bu">print</span>(større_enn_3)</span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="bu">print</span>(<span class="bu">sum</span>(større_enn_3))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1 2 3 4 5 6]
 [False False False  True  True  True]
@@ -383,16 +383,16 @@ Forklaring: <code>gunstige = sum(terningar &gt;= 5)</code>
 <h2 data-number="1.2" class="anchored" data-anchor-id="fleire-terningar"><span class="header-section-number">1.2</span> Fleire terningar <span class="emoji" data-emoji="game_die">🎲</span> <span class="emoji" data-emoji="game_die">🎲</span></h2>
 <p>Spørsmål som “Kva er sannsynet for at produktet av to terningar er 8 eller mindre” er fint å finna svar på ved hjelp av simulering:</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000000</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>terning1 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>terning2 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>produkt <span class="op">=</span> terning1 <span class="op">*</span> terning2</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(produkt <span class="op">&lt;=</span> <span class="dv">8</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>N <span class="op">=</span> <span class="dv">1000000</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a>terning1 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
+<span id="cb12-4"><a href="#cb12-4"></a>terning2 <span class="op">=</span> rng.integers(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span>N)</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a>produkt <span class="op">=</span> terning1 <span class="op">*</span> terning2</span>
+<span id="cb12-7"><a href="#cb12-7"></a>gunstige <span class="op">=</span> <span class="bu">sum</span>(produkt <span class="op">&lt;=</span> <span class="dv">8</span>)</span>
+<span id="cb12-8"><a href="#cb12-8"></a>sannsyn <span class="op">=</span> gunstige <span class="op">/</span> N</span>
+<span id="cb12-9"><a href="#cb12-9"></a></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="bu">print</span>(<span class="ss">f"Sannsynet er </span><span class="sc">{</span>sannsyn<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sannsynet er 0.4452</code></pre>
 </div>
@@ -409,14 +409,14 @@ Forklaring: <code>produkt = terning1 * terning2</code>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Kodelikna finn produktet av element på samme plass i dei to arrayane. Sjekk dømet:</p>
+<p>Kodelinja finn produktet av element på samme plass i dei to arrayane. Sjekk dømet:</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>])</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">*</span> b</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb14-2"><a href="#cb14-2"></a>b <span class="op">=</span> np.array([<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>])</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a>c <span class="op">=</span> a <span class="op">*</span> b</span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="bu">print</span>(c)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 6 14 24 36 50]</code></pre>
 </div>
