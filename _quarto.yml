@@ -38,8 +38,11 @@ format:
     theme: 
     - cosmo
     - custom.scss
+    code-line-numbers: true
   pdf:
     documentclass: scrreprt
-
+    code-line-numbers: true
+execute:
+  freeze: auto 
 
 
