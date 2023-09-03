@@ -24,6 +24,8 @@ book:
       chapters: 
         - sannsyn-terningar.ipynb
         - sannsyn-samansette_forsok.ipynb
+        - sannsyn-ulike_fordelingar.ipynb
+        - sannsyn-hypotesetesting.ipynb
     - part: folgerogrekker.qmd
       chapters: 
       - følger.ipynb

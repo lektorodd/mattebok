@@ -1,5 +1,3 @@
 # Sannsyn og simulering (S1/S2)
 
-I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python.
-
-...
+I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python. Me ser på alt frå [enkle simuleringar](/sannsyn-terningar.ipynb) i uniforme modellar, [samansette forsøk](sannsyn-samansette_forsok.ipynb), og vidare binomiske, hypergeometriske og normalfordelte forsøk. Me ser òg på hypotesetesting i Python. 
