@@ -1,3 +1,5 @@
 /.quarto/
-/_boook/
+/_book/
 /.ipynb-checkopoints/
+/_freeze/
+.DS_Store
