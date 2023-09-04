@@ -1,0 +1,6 @@
+# Funksjonar (S1/S2/R1/R2)
+
+- plotting
+- kurvetilpassing / modellering
+- derivasjon
+- integrasjon

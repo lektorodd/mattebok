@@ -30,6 +30,11 @@ book:
       chapters: 
       - følger.ipynb
       - rekker1.ipynb
+    - part: funksjonar.qmd
+      chapters: 
+      - funksjonar-plotting_og_modellering.ipynb
+      - funksjonar-derivasjon.ipynb
+      - funksjonar-integrasjon.ipynb
   appendices:
     - miniconda.qmd
     
