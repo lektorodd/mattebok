@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pythonmatte - Sannsyn og simulering (S1/S2)</title>
+<title>Pythonmatte - 3&nbsp; Simulering av ulike fordelingar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sannsyn-terningar.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./sannsyn-hypotesetesting.html" rel="next">
+<link href="./sannsyn-samansette_forsok.html" rel="prev">
 <link href="./img/programmer.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sannsyn1.html">Sannsyn og simulering (S1/S2)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sannsyn1.html">Sannsyn og simulering (S1/S2)</a></li><li class="breadcrumb-item"><a href="./sannsyn-ulike_fordelingar.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulering av ulike fordelingar</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./sannsyn1.html" class="sidebar-item-text sidebar-link active">
+            <a href="./sannsyn1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sannsyn og simulering (S1/S2)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Bytt avsnitt">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sannsyn-ulike_fordelingar.html" class="sidebar-item-text sidebar-link">
+  <a href="./sannsyn-ulike_fordelingar.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulering av ulike fordelingar</span></span></a>
   </div>
 </li>
@@ -240,14 +240,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innhald</h2>
+   
+  <ul>
+  <li><a href="#binomisk-sannsyn" id="toc-binomisk-sannsyn" class="nav-link active" data-scroll-target="#binomisk-sannsyn"><span class="header-section-number">3.1</span> Binomisk sannsyn</a></li>
+  <li><a href="#hypergeometrisk-sannsyn" id="toc-hypergeometrisk-sannsyn" class="nav-link" data-scroll-target="#hypergeometrisk-sannsyn"><span class="header-section-number">3.2</span> Hypergeometrisk sannsyn</a></li>
+  <li><a href="#normalfordelt-sannsyn" id="toc-normalfordelt-sannsyn" class="nav-link" data-scroll-target="#normalfordelt-sannsyn"><span class="header-section-number">3.3</span> Normalfordelt sannsyn</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lektorodd/mattebok/blob/main/sannsyn-ulike_fordelingar.ipynb" class="toc-action">Vis kjelde</a></p><p><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action">Meld inn problem</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sannsyn og simulering (S1/S2)</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulering av ulike fordelingar</span></h1>
 </div>
 
 
@@ -262,9 +270,17 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python. Me ser på alt frå <a href="./sannsyn-terningar.html">enkle simuleringar</a> i uniforme modellar, <a href="./sannsyn-samansette_forsok.html">samansette forsøk</a>, og vidare binomiske, hypergeometriske og normalfordelte forsøk. Me ser òg på hypotesetesting i Python.</p>
+<section id="binomisk-sannsyn" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="binomisk-sannsyn"><span class="header-section-number">3.1</span> Binomisk sannsyn</h2>
+</section>
+<section id="hypergeometrisk-sannsyn" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="hypergeometrisk-sannsyn"><span class="header-section-number">3.2</span> Hypergeometrisk sannsyn</h2>
+</section>
+<section id="normalfordelt-sannsyn" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="normalfordelt-sannsyn"><span class="header-section-number">3.3</span> Normalfordelt sannsyn</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -502,13 +518,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Om boka</span>
+      <a href="./sannsyn-samansette_forsok.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Samansette forsøk - choice</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sannsyn-terningar.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terningar og intro til simulering</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sannsyn-hypotesetesting.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Hypotesetesting</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -516,4 +532,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lektorodd/mattebok/blob/main/sannsyn1.qmd" class="toc-action">Vis kjelde</a></p><p><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action">Meld inn problem</a></p></div></div></div></div></footer></body></html>
+</body></html>

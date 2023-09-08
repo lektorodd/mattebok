@@ -4,7 +4,7 @@
     "href": "index.html#om-boka",
     "title": "Pythonmatte",
     "section": "Om boka",
-    "text": "Om boka\nDenne boka inneheld ulike måtar ein kan nytta programmering på i matematikk (programfag på vgs).\nEg nyttar Python som programmeringsspråk gjennom heile boka 🐍.\n\n\n\n\n\n\nOBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med ujamne mellomrom.\n\n\nFor dei spesielt interesserte er boka laga med Quarto. For å lære meir om Quarto-bøker kan ein kikka her."
+    "text": "Om boka\nDenne boka inneheld ulike måtar ein kan nytta programmering på i matematikk (programfag på vgs).\nEg nyttar Python som programmeringsspråk gjennom heile boka 🐍.\n\n\n\n\n\n\nOBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med ujamne mellomrom. Sist oppdatert: {{today}}\n\n\nFor dei spesielt interesserte er boka laga med Quarto. For å lære meir om Quarto-bøker kan ein kikka her."
   },
   {
     "objectID": "index.html#om-meg",
@@ -18,7 +18,7 @@
     "href": "sannsyn1.html",
     "title": "Sannsyn og simulering (S1/S2)",
     "section": "",
-    "text": "I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python.\n…"
+    "text": "I det følgjande kapittelet skal me sjå på korleis me kan simulera ulike stokastiske forsøk i Python. Me ser på alt frå enkle simuleringar i uniforme modellar, samansette forsøk, og vidare binomiske, hypergeometriske og normalfordelte forsøk. Me ser òg på hypotesetesting i Python."
   },
   {
     "objectID": "sannsyn-terningar.html#ein-terning",
@@ -63,6 +63,34 @@
     "text": "2.3 Ikkje uniforme sannsynsmodellar\nDette dømet me har sett på er eit døme på ein ikkje-uniform sannsynsmodell, sidan sannsynet for Banan og Daim ikkje er det same. I starten laga me ei liste med alle twistane i skåla. I dette dømet er det praktisk, sidan me har eit lite utfallsrom (banan og daim) og kontroll på kor mange det er av kvar.\nAv og til kan det vera nyttig å definera ikkje-uniforme sannsynsmodellar på ein litt anna måte.\n\ntwistar = [\"Banan\", \"Daim\"]\nsannsyn = [7/10, 3/10]\n\nto_twist = rng.choice(twistar, size = 2, p = sannsyn)\n\nprint(f\"Me trekk {to_twist}\")\n\nMe trekk ['Banan' 'Daim']\n\n\nDette kan brukast viss me veit utfallsrommet og sannsynet for kvart av utfalla, ikkje nødvendigvis antallet. F.eks. blodtype hos tilfeldige personar i befolkningen."
   },
   {
+    "objectID": "sannsyn-ulike_fordelingar.html#binomisk-sannsyn",
+    "href": "sannsyn-ulike_fordelingar.html#binomisk-sannsyn",
+    "title": "3  Simulering av ulike fordelingar",
+    "section": "3.1 Binomisk sannsyn",
+    "text": "3.1 Binomisk sannsyn"
+  },
+  {
+    "objectID": "sannsyn-ulike_fordelingar.html#hypergeometrisk-sannsyn",
+    "href": "sannsyn-ulike_fordelingar.html#hypergeometrisk-sannsyn",
+    "title": "3  Simulering av ulike fordelingar",
+    "section": "3.2 Hypergeometrisk sannsyn",
+    "text": "3.2 Hypergeometrisk sannsyn"
+  },
+  {
+    "objectID": "sannsyn-ulike_fordelingar.html#normalfordelt-sannsyn",
+    "href": "sannsyn-ulike_fordelingar.html#normalfordelt-sannsyn",
+    "title": "3  Simulering av ulike fordelingar",
+    "section": "3.3 Normalfordelt sannsyn",
+    "text": "3.3 Normalfordelt sannsyn"
+  },
+  {
+    "objectID": "sannsyn-hypotesetesting.html",
+    "href": "sannsyn-hypotesetesting.html",
+    "title": "4  Hypotesetesting",
+    "section": "",
+    "text": "print(\"Kjem etterkvart\")\n\nKjem etterkvart"
+  },
+  {
     "objectID": "folgerogrekker.html",
     "href": "folgerogrekker.html",
     "title": "Følgjer og rekker (S2/R2)",
@@ -72,16 +100,44 @@
   {
     "objectID": "følger.html#aritmetiske-følgjer",
     "href": "følger.html#aritmetiske-følgjer",
-    "title": "3  Følgjer",
-    "section": "3.1 Aritmetiske følgjer",
-    "text": "3.1 Aritmetiske følgjer\nEit anna døme på ei aritmetisk talfølgje er denne\n\\[ 3, 7, 11, 15, ...\\]\nHer ser me at det første leddet \\(a_1 = 3\\) og at differansen \\(d=4\\).\nAt det er ein fast differanse mellom kvart av ledda betyr at dersom me skal finna eit ledd (\\(a_n\\)), må me ta leddet før (\\(a_{n-1}\\)) og legga til differansen (\\(d\\)). Dermed får me\n\\[a_{n} = a_{n-1} + d\\]\nFrå dømet over ser me at det stemmer, \\(7 = 3 + 4\\) og \\(11 = 7 + 4\\) osb.\n\n3.1.1 Rekursiv formel for ledd n\nSamanhengen over kan me nytta for å finna \\(a_n\\) rekursivt. Rekursjon handlar om gjentaking, så tanken er at me kan gjenta formelen for å finna ledd \\(n\\). Me kan laga ein funksjon som kun tek utgangspunkt i opplysningen om at \\(a_{n} = a_{n-1} + d\\).\n\ndef a(n):\n    return a(n-1) + 4\n\nprint(a(4))\n\nRecursionError: maximum recursion depth exceeded\n\n\nMen om du prøver å køyra denne koden vil du få ein feil:\n\nRecursionError: maximum recursion depth exceeded\n\nOm du ser på koden, ser du kanskje kva som er problemet?\nDet let seg løysa om me definerer ein rekursjonsbotn (i dette tilfellet \\(a_1\\)). Me prøver på nytt:\n\ndef a(n):\n    if n == 1:\n        return 3\n    else: \n        return a(n-1) + 4\n\nprint(a(4))\n\n15\n\n\nDenne funksjonen kan me bruka for å t.d. skriva ut dei 10 første ledda i følgja:\n\nfor i in range(1, 11):\n    print(a(i), end = \", \")\n\nprint(\"...\")\n\n3, 7, 11, 15, 19, 23, 27, 31, 35, 39, ...\n\n\nUlempen med denne rekursive funksjonen er at han må gjennom alle dei føregåande ledda for kvart ledd du bruker han for å finna. Så om du skal finna \\(a_1000\\) vil formelen finna alle ledda før. Og på nytt når du ser etter \\(a_1001\\)… Det kan fort bli både tidkrevjande og tungvint, sjølv for datamaskina.\n\n\n3.1.2 Eksplisitt formel for ledd n\nMe kan sjå om me finn ein eksplisitt måte å finna \\(a_n\\) på (altså finna direkte, utan rekursjon). Me ser på dømet igjen.\n\\[3, 7, 11, 15, ...\\]\nMe ser at \\[\n    \\begin{aligned}\n        a_2 &= 7 = 3 + 4 \\\\\n        a_3 &= 11 = 7 + 4 = 3 + 4 + 4 \\\\\n        a_4 &= 15 = 11 + 4 = 7 + 4 + 4 = 3 + 4 + 4 + 4\n    \\end{aligned}\n\\]\nAltså er \\[a_n = a_1 + (n-1)d\\] som me kan programmera som\n\ndef a(n):\n    return 3 + (n-1)*4\n\nprint(a(4))\n\n15\n\n\nOg igjen kan me skriva ut dei ti første ledda:f\n\nfor i in range(1, 11):\n    print(a(i), end=\", \")\n\nprint(\"...\")\n\n3, 7, 11, 15, 19, 23, 27, 31, 35, 39, ..."
+    "title": "5  Følgjer",
+    "section": "5.1 Aritmetiske følgjer",
+    "text": "5.1 Aritmetiske følgjer\nEit anna døme på ei aritmetisk talfølgje er denne\n\\[ 3, 7, 11, 15, ...\\]\nHer ser me at det første leddet \\(a_1 = 3\\) og at differansen \\(d=4\\).\nAt det er ein fast differanse mellom kvart av ledda betyr at dersom me skal finna eit ledd (\\(a_n\\)), må me ta leddet før (\\(a_{n-1}\\)) og legga til differansen (\\(d\\)). Dermed får me\n\\[a_{n} = a_{n-1} + d\\]\nFrå dømet over ser me at det stemmer, \\(7 = 3 + 4\\) og \\(11 = 7 + 4\\) osb.\n\n5.1.1 Rekursiv formel for ledd n\nSamanhengen over kan me nytta for å finna \\(a_n\\) rekursivt. Rekursjon handlar om gjentaking, så tanken er at me kan gjenta formelen for å finna ledd \\(n\\). Me kan laga ein funksjon som kun tek utgangspunkt i opplysningen om at \\(a_{n} = a_{n-1} + d\\).\n\ndef a(n):\n    return a(n-1) + 4\n\nprint(a(4))\n\nRecursionError: maximum recursion depth exceeded\n\n\nMen om du prøver å køyra denne koden vil du få ein feil:\n\nRecursionError: maximum recursion depth exceeded\n\nOm du ser på koden, ser du kanskje kva som er problemet?\nDet let seg løysa om me definerer ein rekursjonsbotn (i dette tilfellet \\(a_1\\)). Me prøver på nytt:\n\ndef a(n):\n    if n == 1:\n        return 3\n    else: \n        return a(n-1) + 4\n\nprint(a(4))\n\n15\n\n\nDenne funksjonen kan me bruka for å t.d. skriva ut dei 10 første ledda i følgja:\n\nfor i in range(1, 11):\n    print(a(i), end = \", \")\n\nprint(\"...\")\n\n3, 7, 11, 15, 19, 23, 27, 31, 35, 39, ...\n\n\nUlempen med denne rekursive funksjonen er at han må gjennom alle dei føregåande ledda for kvart ledd du bruker han for å finna. Så om du skal finna \\(a_1000\\) vil formelen finna alle ledda før. Og på nytt når du ser etter \\(a_1001\\)… Det kan fort bli både tidkrevjande og tungvint, sjølv for datamaskina.\n\n\n5.1.2 Eksplisitt formel for ledd n\nMe kan sjå om me finn ein eksplisitt måte å finna \\(a_n\\) på (altså finna direkte, utan rekursjon). Me ser på dømet igjen.\n\\[3, 7, 11, 15, ...\\]\nMe ser at \\[\n    \\begin{aligned}\n        a_2 &= 7 = 3 + 4 \\\\\n        a_3 &= 11 = 7 + 4 = 3 + 4 + 4 \\\\\n        a_4 &= 15 = 11 + 4 = 7 + 4 + 4 = 3 + 4 + 4 + 4\n    \\end{aligned}\n\\]\nAltså er \\[a_n = a_1 + (n-1)d\\] som me kan programmera som\n\ndef a(n):\n    return 3 + (n-1)*4\n\nprint(a(4))\n\n15\n\n\nOg igjen kan me skriva ut dei ti første ledda:f\n\nfor i in range(1, 11):\n    print(a(i), end=\", \")\n\nprint(\"...\")\n\n3, 7, 11, 15, 19, 23, 27, 31, 35, 39, ..."
   },
   {
     "objectID": "rekker1.html",
     "href": "rekker1.html",
-    "title": "4  Rekker",
+    "title": "6  Rekker",
     "section": "",
     "text": "a = \"test\""
+  },
+  {
+    "objectID": "funksjonar.html",
+    "href": "funksjonar.html",
+    "title": "Funksjonar (S1/S2/R1/R2)",
+    "section": "",
+    "text": "plotting\nkurvetilpassing / modellering\nderivasjon\nintegrasjon"
+  },
+  {
+    "objectID": "funksjonar-plotting_og_modellering.html#funksjonar-med-delt-forskrift",
+    "href": "funksjonar-plotting_og_modellering.html#funksjonar-med-delt-forskrift",
+    "title": "7  Plotting",
+    "section": "7.1 Funksjonar med delt forskrift",
+    "text": "7.1 Funksjonar med delt forskrift\nNokre funksjonar kan ha ulik definisjon på ulike intervall. Desse kallar me funksjonar med delt forskrift. Me ser på funksjonen\n\\[f(x) = \\begin{cases}\nx^2 & \\text{for } x \\leq 0 \\\\\nx & \\text{for } x &gt; 0\n\\end{cases}\\]\nDenne kan definerast med numpy.piecewise().\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nStartar med å definera funksjonen. Det gjer me med\nnumpy.piecewise(x, condlist, funclist)\nder condlist er ei liste med betingelse/intervall og funclist funksjonane i same rekkefølge\n\ndef f(x):\n    return np.piecewise(\n        x = x, \n        condlist = [x &lt;= 0, x &gt; 0], \n        funclist = [lambda x: x**2, lambda x: x]\n        )\n\n\n\n\n\n\n\nKva er lambda?\n\n\n\n\n\nlambda x: er kortversjonen av\n\ndef f(x):\n    return x**2\n\nDermed kan me heller definera funksjonen slik:\n\nx = np.linspace(-3,2,5)\nf = lambda x: x**2\n\ny = f(x)\n\n\n\n\nLagar ein array med 100 \\(x\\)-verdiar og finn vidare \\(y\\)-verdiane med funksjonen me definerte.\n\nx = np.linspace(-4,4,100)\ny = f(x)\n\nPlottar grafen:\n\nplt.plot(x, y)\n\n# pynt\nplt.axhline(0, color=\"black\")\nplt.axvline(0, color=\"black\")\nplt.grid()\nplt.show()"
+  },
+  {
+    "objectID": "funksjonar-derivasjon.html",
+    "href": "funksjonar-derivasjon.html",
+    "title": "8  Derivasjon",
+    "section": "",
+    "text": "print(\"...\")\n\n..."
+  },
+  {
+    "objectID": "funksjonar-integrasjon.html",
+    "href": "funksjonar-integrasjon.html",
+    "title": "9  Integrasjon",
+    "section": "",
+    "text": "print(\"...\")\n\n..."
   },
   {
     "objectID": "miniconda.html#jupyter-lab",
