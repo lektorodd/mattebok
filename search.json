@@ -119,8 +119,8 @@
     "text": "plotting\nkurvetilpassing / modellering\nderivasjon\nintegrasjon"
   },
   {
-    "objectID": "funksjonar-plotting_og_modellering.html#funksjonar-med-delt-forskrift",
-    "href": "funksjonar-plotting_og_modellering.html#funksjonar-med-delt-forskrift",
+    "objectID": "funksjonar-plotting.html#funksjonar-med-delt-forskrift",
+    "href": "funksjonar-plotting.html#funksjonar-med-delt-forskrift",
     "title": "7  Plotting",
     "section": "7.1 Funksjonar med delt forskrift",
     "text": "7.1 Funksjonar med delt forskrift\nNokre funksjonar kan ha ulik definisjon på ulike intervall. Desse kallar me funksjonar med delt forskrift. Me ser på funksjonen\n\\[f(x) = \\begin{cases}\nx^2 & \\text{for } x \\leq 0 \\\\\nx & \\text{for } x &gt; 0\n\\end{cases}\\]\nDenne kan definerast med numpy.piecewise().\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nStartar med å definera funksjonen. Det gjer me med\nnumpy.piecewise(x, condlist, funclist)\nder condlist er ei liste med betingelse/intervall og funclist funksjonane i same rekkefølge\n\ndef f(x):\n    return np.piecewise(\n        x = x, \n        condlist = [x &lt;= 0, x &gt; 0], \n        funclist = [lambda x: x**2, lambda x: x]\n        )\n\n\n\n\n\n\n\nKva er lambda?\n\n\n\n\n\nlambda x: er kortversjonen av\n\ndef f(x):\n    return x**2\n\nDermed kan me heller definera funksjonen slik:\n\nx = np.linspace(-3,2,5)\nf = lambda x: x**2\n\ny = f(x)\n\n\n\n\nLagar ein array med 100 \\(x\\)-verdiar og finn vidare \\(y\\)-verdiane med funksjonen me definerte.\n\nx = np.linspace(-4,4,100)\ny = f(x)\n\nPlottar grafen:\n\nplt.plot(x, y)\n\n# pynt\nplt.axhline(0, color=\"black\")\nplt.axvline(0, color=\"black\")\nplt.grid()\nplt.show()"
