@@ -32,7 +32,7 @@ book:
       - rekker1.ipynb
     - part: funksjonar.qmd
       chapters: 
-      - funksjonar-plotting_og_modellering.ipynb
+      - funksjonar-plotting.ipynb
       - funksjonar-derivasjon.ipynb
       - funksjonar-integrasjon.ipynb
   appendices:
