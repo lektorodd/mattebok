@@ -38,6 +38,9 @@ book:
   appendices:
     - miniconda.qmd
     
+  google-analytics:
+    tracking-id: "G-NHM0JJCVM6"
+    anonymize-ip: true
 
 
 format:
