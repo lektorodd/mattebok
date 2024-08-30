@@ -14,7 +14,7 @@
     "href": "index.html#om-boka",
     "title": "Pythonmatte",
     "section": "",
-    "text": "OBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med ujamne mellomrom. Sist oppdatert: {{today}}",
+    "text": "OBS 🚧 🚧 🚧\n\n\n\nBoka er under utvikling og vert oppdatert med (veldig) ujamne mellomrom. Sist oppdatert: 30.08.2024",
     "crumbs": [
       "Om boka"
     ]
@@ -32,11 +32,11 @@
   {
     "objectID": "grunnleggande.html",
     "href": "grunnleggande.html",
-    "title": "Grunnleggade (R1/S1/R2/S2)",
+    "title": "Grunnleggande (R1/S1/R2/S2)",
     "section": "",
-    "text": "Litt om potensar, røter og logaritmar.\nEtterkvart kanskje litt om korleis ein kan bruka python til CAS (symbolsk matematikk)",
+    "text": "Grunnleggande matematikk i Python\nLitt om potensar, røter og logaritmar.\nEtterkvart kanskje litt om korleis ein kan bruka python til CAS (symbolsk matematikk)",
     "crumbs": [
-      "Grunnleggade (R1/S1/R2/S2)"
+      "Grunnleggande (R1/S1/R2/S2)"
     ]
   },
   {
@@ -46,7 +46,7 @@
     "section": "",
     "text": "1.1 Potensar\nPotensar kan ein rekne ut med **-operatoren. For eksempel er \\(2^3\\) i python 2**3.\nprint(2**3)\n\n8\nDette gjeld og for negative eksponentar, til dømes \\(2^{-3}\\)\nprint(2**(-3))\n\n0.125\nOg for eksponentar som er brøk (eller desimaltal), til dømes \\(100^{1/2}\\)\nprint(100**(1/2))\nprint(100**0.5)\n\n10.0\n10.0",
     "crumbs": [
-      "Grunnleggade (R1/S1/R2/S2)",
+      "Grunnleggande (R1/S1/R2/S2)",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Potensar, røter og logaritmar</span>"
     ]
   },
@@ -57,7 +57,7 @@
     "section": "1.2 Røter",
     "text": "1.2 Røter\nVed å bruka potensar kan ein og rekne ut røter. Til dømes er \\(\\sqrt{100}\\) det same som \\(100^{1/2}\\). Meir generelt veit me at\n\\[x^{\\frac{a}{n}} = \\sqrt[n]{x^a}\\]\nDermed kan me rekna ut til dømes \\(\\sqrt[3]{1000}\\) som 1000**(1/3)\n\nprint(1000**(1/3))\n\n9.999999999999998\n\n\nHer ser me at **-operatoren ikkje reknar heilt rett. Svaret er 10, men Python gir oss 9.999999999999998. Dette er fordi Python ikkje klarar å representere alle desimaltal heilt nøyaktig.\nFor å unngå dette kan me bruka rot-funksjonar frå numpy-biblioteket. Då får me heilt nøyaktige svar. np.sqrt() reknar ut kvadratrøter og np.cbrt() reknar ut kubikkrøter.\n\nimport numpy as np\n\n# tredjerota av 1000\nprint(np.cbrt(1000))\n\n# kvadratrota av pi\nprint(np.sqrt(np.pi))\n\n10.0\n1.7724538509055159",
     "crumbs": [
-      "Grunnleggade (R1/S1/R2/S2)",
+      "Grunnleggande (R1/S1/R2/S2)",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Potensar, røter og logaritmar</span>"
     ]
   },
@@ -68,7 +68,7 @@
     "section": "1.3 Logaritmar",
     "text": "1.3 Logaritmar\nLogaritmar kan ein rekne ut med np.log()-funksjonen. For eksempel er \\(\\log_{10}(100)\\) lik np.log10(100).\n\nprint(np.log10(100))\n\n2.0\n\n\nMedan np.log() reknar ut naturlige logaritmar, altså logaritmar med grunntal \\(e\\).\n\nprint(np.log(100))\n\n4.605170185988092\n\n\nSom vil seie at \\(e^{4.60517} \\approx 100\\).\n\nprint(np.exp(4.60517))\n\n99.99998140119261\n\n\n⬆️ Her ser me også at \\(e^x\\) kan skrivast som np.exp(x).",
     "crumbs": [
-      "Grunnleggade (R1/S1/R2/S2)",
+      "Grunnleggande (R1/S1/R2/S2)",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Potensar, røter og logaritmar</span>"
     ]
   },
@@ -79,7 +79,7 @@
     "section": "1.4 Røter og logaritmar - arrays",
     "text": "1.4 Røter og logaritmar - arrays\nI numpy treng ikkje input til desse funksjonane vera eit enkelt tal. Det kan og vera ein array/liste. Då vil funksjonen rekna ut røter og logaritmar for kvart element i arrayen/lista. Det kan vera praktisk om me skal rekna ut mange tal samtidig.\n\ntal = [1, 4, 9, 16, 25]\nprint(np.sqrt(tal))\n\n[1. 2. 3. 4. 5.]\n\n\n\ntal = [1, 10, 100, 1000, 1e6]\nprint(np.log10(tal))\n\n[0. 1. 2. 3. 6.]\n\n\n⬆️ Legg merke til korleis me kan skriva tal på standardform her (1e6 er det same som \\(10^6\\)).",
     "crumbs": [
-      "Grunnleggade (R1/S1/R2/S2)",
+      "Grunnleggande (R1/S1/R2/S2)",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Potensar, røter og logaritmar</span>"
     ]
   },
