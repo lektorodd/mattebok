@@ -1,0 +1,6 @@
+# Grunnleggande (R1/S1/R2/S2)
+
+## Grunnleggande matematikk i Python
+Litt om potensar, røter og logaritmar.
+
+Etterkvart kanskje litt om korleis ein kan bruka python til CAS (symbolsk matematikk)

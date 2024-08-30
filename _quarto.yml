@@ -20,6 +20,9 @@ book:
 
   chapters:
     - index.qmd
+    - part: grunnleggande.qmd
+      chapters: 
+        - potensar-roeter-logaritmar.ipynb
     - part: sannsyn1.qmd
       chapters: 
         - sannsyn-terningar.ipynb

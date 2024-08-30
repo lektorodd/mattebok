@@ -7,8 +7,8 @@ Eg nyttar Python som programmeringsspråk gjennom heile boka :snake:.
 :::{.callout-warning}
 ## OBS :construction: :construction: :construction: 
 
-Boka er under utvikling og vert oppdatert med ujamne mellomrom.
-Sist oppdatert: {{today}}
+Boka er under utvikling og vert oppdatert med (veldig) ujamne mellomrom.
+Sist oppdatert: 30.08.2024
 :::
 
 For dei spesielt interesserte er boka laga med Quarto. 
