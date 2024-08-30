@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pythonmatte - 9&nbsp; Derivasjon</title>
+<title>Pythonmatte - 1&nbsp; Potensar, røter og logaritmar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./funksjonar-integrasjon.html" rel="next">
-<link href="./funksjonar-plotting.html" rel="prev">
+<link href="./sannsyn1.html" rel="next">
+<link href="./grunnleggande.html" rel="prev">
 <link href="./img/programmer.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -113,6 +113,35 @@ gtag('js', new Date());
 gtag('config', 'G-NHM0JJCVM6', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -125,7 +154,7 @@ gtag('config', 'G-NHM0JJCVM6', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./funksjonar.html">Funksjonar (S1/S2/R1/R2)</a></li><li class="breadcrumb-item"><a href="./funksjonar-derivasjon.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Derivasjon</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./grunnleggande.html">Grunnleggade (R1/S1/R2/S2)</a></li><li class="breadcrumb-item"><a href="./potensar-roeter-logaritmar.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Potensar, røter og logaritmar</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -191,7 +220,7 @@ gtag('config', 'G-NHM0JJCVM6', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./potensar-roeter-logaritmar.html" class="sidebar-item-text sidebar-link">
+  <a href="./potensar-roeter-logaritmar.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Potensar, røter og logaritmar</span></span></a>
   </div>
 </li>
@@ -272,7 +301,7 @@ gtag('config', 'G-NHM0JJCVM6', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./funksjonar-derivasjon.html" class="sidebar-item-text sidebar-link active">
+  <a href="./funksjonar-derivasjon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Derivasjon</span></span></a>
   </div>
 </li>
@@ -307,14 +336,23 @@ gtag('config', 'G-NHM0JJCVM6', { 'anonymize_ip': true});
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innhald</h2>
+   
+  <ul>
+  <li><a href="#potensar" id="toc-potensar" class="nav-link active" data-scroll-target="#potensar"><span class="header-section-number">1.1</span> Potensar</a></li>
+  <li><a href="#røter" id="toc-røter" class="nav-link" data-scroll-target="#røter"><span class="header-section-number">1.2</span> Røter</a></li>
+  <li><a href="#logaritmar" id="toc-logaritmar" class="nav-link" data-scroll-target="#logaritmar"><span class="header-section-number">1.3</span> Logaritmar</a></li>
+  <li><a href="#røter-og-logaritmar---arrays" id="toc-røter-og-logaritmar---arrays" class="nav-link" data-scroll-target="#røter-og-logaritmar---arrays"><span class="header-section-number">1.4</span> Røter og logaritmar - arrays</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/lektorodd/mattebok/blob/main/potensar-roeter-logaritmar.ipynb" class="toc-action"><i class="bi bi-github"></i>Vis kjelde</a></li><li><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action"><i class="bi empty"></i>Meld inn problem</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./funksjonar.html">Funksjonar (S1/S2/R1/R2)</a></li><li class="breadcrumb-item"><a href="./funksjonar-derivasjon.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Derivasjon</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./grunnleggande.html">Grunnleggade (R1/S1/R2/S2)</a></li><li class="breadcrumb-item"><a href="./potensar-roeter-logaritmar.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Potensar, røter og logaritmar</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Derivasjon</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Potensar, røter og logaritmar</span></h1>
 </div>
 
 
@@ -331,14 +369,106 @@ gtag('config', 'G-NHM0JJCVM6', { 'anonymize_ip': true});
 </header>
 
 
-<div id="cell-1" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">print</span>(<span class="st">"..."</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ser litt på korleis ein kan rekne ut potensar, røter og logaritmar i Python.</p>
+<section id="potensar" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="potensar"><span class="header-section-number">1.1</span> Potensar</h2>
+<p>Potensar kan ein rekne ut med <code>**</code>-operatoren. For eksempel er <span class="math inline">\(2^3\)</span> i python <code>2**3</code>.</p>
+<div id="cell-3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">**</span><span class="dv">3</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>...</code></pre>
+<pre><code>8</code></pre>
 </div>
 </div>
+<p>Dette gjeld og for negative eksponentar, til dømes <span class="math inline">\(2^{-3}\)</span></p>
+<div id="cell-5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">**</span>(<span class="op">-</span><span class="dv">3</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.125</code></pre>
+</div>
+</div>
+<p>Og for eksponentar som er brøk (eller desimaltal), til dømes <span class="math inline">\(100^{1/2}\)</span></p>
+<div id="cell-7" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">print</span>(<span class="dv">100</span><span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="dv">100</span><span class="op">**</span><span class="fl">0.5</span>)</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10.0
+10.0</code></pre>
+</div>
+</div>
+</section>
+<section id="røter" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="røter"><span class="header-section-number">1.2</span> Røter</h2>
+<p>Ved å bruka potensar kan ein og rekne ut røter. Til dømes er <span class="math inline">\(\sqrt{100}\)</span> det same som <span class="math inline">\(100^{1/2}\)</span>. Meir generelt veit me at</p>
+<p><span class="math display">\[x^{\frac{a}{n}} = \sqrt[n]{x^a}\]</span></p>
+<p>Dermed kan me rekna ut til dømes <span class="math inline">\(\sqrt[3]{1000}\)</span> som <code>1000**(1/3)</code></p>
+<div id="cell-9" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">print</span>(<span class="dv">1000</span><span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.999999999999998</code></pre>
+</div>
+</div>
+<p>Her ser me at <code>**</code>-operatoren ikkje reknar heilt rett. Svaret er 10, men Python gir oss 9.999999999999998. Dette er fordi Python ikkje klarar å representere alle desimaltal heilt nøyaktig.</p>
+<p>For å unngå dette kan me bruka rot-funksjonar frå <code>numpy</code>-biblioteket. Då får me heilt nøyaktige svar. <code>np.sqrt()</code> reknar ut kvadratrøter og <code>np.cbrt()</code> reknar ut kubikkrøter.</p>
+<div id="cell-12" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># tredjerota av 1000</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(np.cbrt(<span class="dv">1000</span>))</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co"># kvadratrota av pi</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="bu">print</span>(np.sqrt(np.pi))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10.0
+1.7724538509055159</code></pre>
+</div>
+</div>
+</section>
+<section id="logaritmar" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="logaritmar"><span class="header-section-number">1.3</span> Logaritmar</h2>
+<p>Logaritmar kan ein rekne ut med <code>np.log()</code>-funksjonen. For eksempel er <span class="math inline">\(\log_{10}(100)\)</span> lik <code>np.log10(100)</code>.</p>
+<div id="cell-14" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(np.log10(<span class="dv">100</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.0</code></pre>
+</div>
+</div>
+<p>Medan <code>np.log()</code> reknar ut naturlige logaritmar, altså logaritmar med grunntal <span class="math inline">\(e\)</span>.</p>
+<div id="cell-16" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">print</span>(np.log(<span class="dv">100</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4.605170185988092</code></pre>
+</div>
+</div>
+<p>Som vil seie at <span class="math inline">\(e^{4.60517} \approx 100\)</span>.</p>
+<div id="cell-18" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">print</span>(np.exp(<span class="fl">4.60517</span>))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>99.99998140119261</code></pre>
+</div>
+</div>
+<p>⬆️ Her ser me også at <span class="math inline">\(e^x\)</span> kan skrivast som <code>np.exp(x)</code>.</p>
+</section>
+<section id="røter-og-logaritmar---arrays" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="røter-og-logaritmar---arrays"><span class="header-section-number">1.4</span> Røter og logaritmar - arrays</h2>
+<p>I numpy treng ikkje input til desse funksjonane vera eit enkelt tal. Det kan og vera ein array/liste. Då vil funksjonen rekna ut røter og logaritmar for kvart element i arrayen/lista. Det kan vera praktisk om me skal rekna ut mange tal samtidig.</p>
+<div id="cell-21" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>tal <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>, <span class="dv">25</span>]</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="bu">print</span>(np.sqrt(tal))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1. 2. 3. 4. 5.]</code></pre>
+</div>
+</div>
+<div id="cell-22" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>tal <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="fl">1e6</span>]</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="bu">print</span>(np.log10(tal))</span></code><button title="Kopier til utklippstavla" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0. 1. 2. 3. 6.]</code></pre>
+</div>
+</div>
+<p>⬆️ Legg merke til korleis me kan skriva tal på standardform her (<code>1e6</code> er det same som <span class="math inline">\(10^6\)</span>).</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -730,13 +860,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./funksjonar-plotting.html" class="pagination-link  aria-label=" &lt;span="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plotting</span></span>
+      <a href="./grunnleggande.html" class="pagination-link  aria-label=" grunnleggade="" (r1="" s1="" r2="" s2)"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Grunnleggade (R1/S1/R2/S2)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./funksjonar-integrasjon.html" class="pagination-link" aria-label="<span class='chapter-number'>10</span>&nbsp; <span class='chapter-title'>Integrasjon</span>">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Integrasjon</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sannsyn1.html" class="pagination-link" aria-label="Sannsyn og simulering (S1/S2)">
+        <span class="nav-page-text">Sannsyn og simulering (S1/S2)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -745,4 +875,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/lektorodd/mattebok/blob/main/funksjonar-derivasjon.ipynb" class="toc-action"><i class="bi bi-github"></i>Vis kjelde</a></li><li><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action"><i class="bi empty"></i>Meld inn problem</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lektorodd/mattebok/blob/main/potensar-roeter-logaritmar.ipynb" class="toc-action"><i class="bi bi-github"></i>Vis kjelde</a></li><li><a href="https://github.com/lektorodd/mattebok/issues/new" class="toc-action"><i class="bi empty"></i>Meld inn problem</a></li></ul></div></div></div></footer></body></html>
